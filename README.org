@@ -4,11 +4,11 @@ You will have 5 labs:
 
 |   | Title                               | Deadline |
 |---+-------------------------------------+----------|
-| 1 | Lab I. Dialogue  (see Canvas)       | TBA      |
-| 2 | Lab II. Basic dialogue management   | TBA      |
-| 3 | Lab III. Speech synthesis           | TBA      |
-| 4 | Lab IV. NLU (see Canvas)            | TBA      |
-| 5 | Lab V. Advanced dialogue management | TBA      |
+| 1 | [[labs/lab1.org][Lab I. Dialogue]]                     | TBA      |
+| 2 | [[labs/lab2.org][Lab II. Basic dialogue management]]   | TBA      |
+| 3 | [[labs/lab3.org][Lab III. Speech synthesis]]           | TBA      |
+| 4 | Lab IV. NLU                         | TBA      |
+| 5 | [[labs/lab5.org][Lab V. Advanced dialogue management]] | TBA      |
 
 * How to run ~speechstate~
 ** Create Azure account and enable speech services
