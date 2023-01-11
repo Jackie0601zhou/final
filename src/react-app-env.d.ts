@@ -39,9 +39,7 @@ interface SDSContext {
   sessionId: string;
   azureAuthorizationToken: string;
   audioCtx: any;
-
-  gameCount: number;
-  winCount: number;
+  x;
 }
 
 type SDSEvent =

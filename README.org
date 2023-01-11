@@ -1,5 +1,17 @@
-#+TITLE: How to run ~speechstate~
-* Create Azure account and enable speech services
+#+TITLE: DIALOGUE SYSTEMS 2023 (LT2216/LT2816)
+* Overview
+You will have 5 labs:
+
+|   | Title                               | Deadline |
+|---+-------------------------------------+----------|
+| 1 | Lab I. Dialogue  (see Canvas)       | TBA      |
+| 2 | Lab II. Basic dialogue management   | TBA      |
+| 3 | Lab III. Speech synthesis           | TBA      |
+| 4 | Lab IV. NLU (see Canvas)            | TBA      |
+| 5 | Lab V. Advanced dialogue management | TBA      |
+
+* How to run ~speechstate~
+** Create Azure account and enable speech services
 1. Apply for free student credits
    https://azure.microsoft.com/en-us/free/students/. You should be
    able to login with your GU account.
@@ -16,7 +28,7 @@
    - Resource group: group name from the previous step
 5. Within your Speech Service go to: *Resourse management → Keys and
    Endpoint* and copy your KEY 1.
-* Configure your app
+** Configure your app
 Modify the file ~static/index.html~ with desired Azure Key and app languages.
 #+begin_src 
 <div
@@ -26,13 +38,13 @@ Modify the file ~static/index.html~ with desired Azure Key and app languages.
   data-asr-language="en-US"
 ></div>
 #+end_src
-* Run server
-** locally
+** Run server
+*** locally
 with the command:
 #+begin_src
 yarn start
 #+end_src
-** deploy to github pages
+*** deploy to github pages
 with the command:
 #+begin_src
 yarn deploy
