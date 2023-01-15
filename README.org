@@ -11,6 +11,8 @@ You will have 5 labs:
 | 5 | [[labs/lab5.org][Lab V. Advanced dialogue management]] | TBA      |
 
 * How to run ~speechstate~
+** Install NodeJS, yarn and the dependencies
+
 ** Create Azure account and enable speech services
 1. Apply for free student credits
    https://azure.microsoft.com/en-us/free/students/. You should be
@@ -49,3 +51,6 @@ with the command:
 #+begin_src
 yarn deploy
 #+end_src
+
+* Feedback
+- 

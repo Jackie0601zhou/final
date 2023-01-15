@@ -1,2 +1,26 @@
 #+OPTIONS: num:nil
 #+TITLE: Lab I. Dialogue
+* Task 1. Dialogue experiment
+
+*DEADLINE: 24/01 23:59*
+
+In groups of three, your task is to tell each other jokes in two
+different contexts -- text based chat (using discord) and video chat
+(using zoom). For the text-based chat, please copy the transcript of
+the dialogue after you have all told your jokes, and e-mail this to
+Chris, Vlad and Fahima. For the video call, please record the dialogue
+and send the recording to Chris, Vlad and Fahima.
+
+Please contact Fahima on Discord (Fahima#1805). She will assign you to
+a group and give you personalised instructions on how to proceed with
+the task.
+
+
+* Task 2. Analysis
+TBA on 26/01
+
+* Task 3. Peer assignment 1: project idea
+- *DEADLINE for the assigment: 25/01 23:59*
+- *DEADLINE for the reviews: 29/01 23:59*
+
+See Canvas: https://canvas.gu.se/courses/64393/assignments/199298
