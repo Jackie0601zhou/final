@@ -1,4 +1,4 @@
-import "./styles.scss";
+import "./styles.css";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { createMachine, assign, actions, State } from "xstate";
