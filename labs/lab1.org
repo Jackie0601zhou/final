@@ -15,10 +15,147 @@ Please contact Fahima on Discord (Fahima#1805). She will assign you to
 a group and give you personalised instructions on how to proceed with
 the task.
 
+-----
 
-* Task 2. Analysis
-TBA on 26/01
+* Task 2. Lab assignment write-up 
+The assignment should be done on the segments of the chat which
+consist of the two jokes that you yourself told in the zoom chat,
+matched to the *same* jokes (told by someone else, it can be another
+variant of the same joke) in the text chat.  Note that the
+‘joke-telling segments’ include any build-up to the joke and the
+reaction.  You may discuss the task in your groups or with others but
+the write-up should be done individually.
 
+For all Discord transcripts, see the assignment page: https://canvas.gu.se/courses/64393/assignments/200435
+
+You may discuss the task in your groups or with others but the write-up should be done individually.
+
+** Part A.
+For both of your two jokes, think about what it is that is (supposed to be) funny about them. Many jokes revolve around managing misunderstandings, either between the characters in the joke, or in the interlocutors in the joke telling situation (such as when a joke is set up to evoke one type of situation but is revealed to be a different type of situation in the punchline). Can your jokes be described in these terms? 
+
+** Part B.
+For each of the 4 joke-telling segments (2 in zoom, 2 in text chat) please discuss the segments with respect to the following aspects. The discussion is not meant to be exhaustive and some of the factors will be more relevant in particular cases than others: 
+- Turn-taking (overlapping in zoom, sequentiality in text, is the joke told in multiple segments or all at once etc) 
+- Backchannels (‘yeah’, ‘okay’ ‘mm’; can also include non-verbal behaviour, e.g. nodding, smiling, laughing, emojis) 
+- Self-repair/pauses (‘er’,’erm’; repeated words or phrases; reformulated words or phrases) 
+- Other-repair (clarification requests ‘what?’, ‘eh?’ both within the joke and in the joke telling event) 
+- Speech/dialogue acts (e.g questions/answers, requests, both in the
+  talk around the joke, and in the story-world of the joke)
+
+
+** Part C.
+1. What differences are there in general between the two mediums (text versus zoom) in the joke telling segments you analysed? How different are the joke-tellings to the written form of the jokes? 
+2. What observations can you make about the transition from one joke to another? How are they structured? Do dialogue participants use any special words?  
+
+** Part D.
+
+What would a ‘dream dialogue’ with a joke-telling dialogue system look like? Please provide an example of such dialogue where dialogue system first listens to a joke from the user and then takes a chance to tell another joke itself. The jokes can be different from ones in your assignment.  
+ 
+Please ask Chris, Vlad or Fahima if you have any questions! 
+
+** Appendix
+*** Group assignment
+|         | First |          | Second |          |
+|---------+-------+----------+--------+----------|
+| Group 1 | Text: | 1A,2A,3A | Zoom:  | 4B,5B,6B |
+| Group 2 | Text: | 1B,2B,3B | Zoom:  | 4A,5A,6A |
+| Group 3 | Zoom: | 1A,2A,3A | Text:  | 4B,5B,6B |
+| Group 4 | Zoom: | 1B,2B,3B | Text:  | 4A,5A,6A |
+| Group 5 | Text: | 4B,5B,6B | Zoom:  | 1A,2A,3A |
+| Group 6 | Text: | 4A,5A,6A | Zoom:  | 1B,2B,3B |
+| Group 7 | Zoom: | 4B,5B,6B | Text:  | 1A,2A,3A |
+*** Written forms of the jokes 
+**** 1.1
+A) 
+How do you put an elephant into a fridge? 
+Open the door, put the elephant inside, close the door. 
+How do you put a giraffe into a fridge? 
+Open the door, get the elephant out, put the giraffe inside, close the door. 
+
+B)
+How do you put an elephant into a *walk-in* fridge? 
+Open the door, put the elephant inside, close the door. 
+How do you put a giraffe into the fridge? 
+Open the door, get the elephant out, put the giraffe inside, close the door. 
+**** 1.2
+A)
+Three vampires walk into a bar.  
+The bartender asks the first vampire what he wants to drink. He replies, “Warm blood.” The bartender pulls a live rat out from under the bar, chops its head off, and drains the blood into a glass. 
+He asks the second vampire what he wants to drink, and he replies “Cold blood.” The bartender pulls out another rat, chops off its head, and throws several ice cubes into the glass with the blood. 
+The bartender asks the third vampire what he wants to drink, and the vampire says “Hot water.” The bartender is puzzled. “Don’t you want blood?” he asks. The vampire pulls a used tampon out of his jacket and says, “Oh, no, I’m making tea”. 
+
+B)
+Three vampires walk into a bar.  
+The bartender asks the first vampire what he wants to drink. He replies, “Warm blood.” The bartender pulls a live rat out from under the bar, chops its head off, and drains the blood into a glass. 
+He asks the second vampire what he wants to drink, and he replies “Cold blood.” The bartender pulls out another rat, chops off its head, and throws several ice cubes into the glass with the blood. 
+The bartender asks the third vampire what he wants to drink, and the vampire *pulls a used tampon out of his jacket* and says “Hot water.”  The bartender is puzzled. “Don’t you want blood?” he asks. “Oh, no,” says the vampire, “I’m making tea”. 
+**** 2.1
+A)
+A man telephoned the airline office and asked, “How long does it take to fly to Boston?”  The clerk said: “Just a minute…”  “Thank you,” the man said and hung up.
+
+B)
+A man telephoned the airline office and asked, “How long does it take to fly to Boston?”  The clerk said: “ *Wait* a minute…”  “Thank you,” the man said and hung up. 
+**** 2.2
+A)
+A boy is walking down the road one day when a car pulls over. “If you get in the car”, the driver says, “I’ll give you a 10 pound note and a packet of sweets”. The boy refuses and keeps on walking.  A little further up the road the man pulls over again. “Okay”, he says. “How about a 20 pound note and two packets of sweets?” The boy tells the man to piss off and carries on walking.  Still further up the road the man again pulls over, “Right,” he says. “This is my final offer, I’ll give you fifty pounds and all the sweets you can eat.” The little boy stops walking, goes toward the car and leans in. “Look,” he hisses. “You bought the fucking Skoda, Dad, and you have to live with it.” 
+
+B)
+A boy is walking down the road one day when a car pulls over. “If you get in the car”, *his dad*, the driver says, “I’ll give you a 10 pound note and a packet of sweets”. The boy refuses and keeps on walking.  A little further up the road the man pulls over again. “Okay”, he says. “How about a 20 pound note and two packets of sweets?” The boy tells the man to piss off and carries on walking.  Still further up the road the man again pulls over, “Right,” he says. “This is my final offer, I’ll give you fifty pounds and all the sweets you can eat.” The little boy stops walking, goes toward the car and leans in. “Look,” he hisses. “You bought the fucking Skoda, Dad, and you have to live with it.” 
+**** 3.1
+A) 
+How does an elephant hide in a cherry tree?  
+It paints its toenails red.
+
+B)
+How does a *monkey* hide in a cherry tree?  
+It paints its toenails red. 
+**** 3.2 
+A) 
+A woman was in bed with her husband’s best friend when the phone   rang. After hanging up, she turned to her lover and said: "That was   Jim, but don't worry, he won't be home for a while. He's playing cards with you." 
+
+B)
+A woman was in bed with her husband’s best friend when the phone   rang. After hanging up, she turned to her lover and said: "That was   Jim, but don't worry, he won't be home for a while. *He's obviously having an affair* -- he said he's playing cards with you." 
+**** 4.1
+A) 
+Why did the elephant sit on the marshmallow? 
+Because he didn't want to fall into the hot chocolate. 
+
+B)
+Why did the *tiny* elephant sit on the marshmallow? 
+Because he didn't want to fall into the hot chocolate. 
+**** 4.2 
+A) 
+An Irishman, an Englishman and a Scotsman go into a pub and each order a pint of beer. Just as the bartender hands them over, three flies buzz down and one lands in each of the pints. The Englishman looks disgusted, pushes his drink away and demands another pint. The Irishman picks out the fly, shrugs, and takes a long swallow. The Scotsman reaches in to the glass, pinches the fly between his fingers and shakes it while yelling, "Spit it oot, ya bastard! Spit it oot!" 
+
+B)
+A *laid-back* Irishman, an *uptight* Englishman and a *stingy* Scotsman go into a pub and each order a pint of beer. Just as the bartender hands them over, three flies buzz down and one lands in each of the pints. The Englishman looks disgusted, pushes his drink away and demands another pint. The Irishman picks out the fly, shrugs, and takes a long swallow. The Scotsman reaches in to the glass, pinches the fly between his fingers and shakes it while yelling, "Spit it oot, ya bastard! Spit it oot!" 
+**** 5.1
+A)
+A bear walks into a bar, walks up to the bartender and says: “A martini . . . dry.” The bartender says “What’s with the long pause?” The bear replies “I don’t know, I was born with them.” 
+
+B)
+A *man* walks into a bar, walks up to the bartender and says: “A martini . . . dry.” The bartender says “What’s with the long pause?” The *man* replies “I don’t know, I was born with them.”   
+**** 5.2
+A)
+A concert pianist travelled to Africa in a bid to prove that music had the power to soothe the savage beast. He set up his grand piano in a small clearing beside a river, and began to play. One by one, animals appeared and soon he was surrounded by lions, giraffes, antelopes, warthogs, and leopards, all sitting peacefully together swaying and tapping their feet. The pianist had just started to play a second piece when a crocodile splashed out of the river, grabbed the man with its jaws, and dragged him into the water. An agitated lion ran over to the water’s edge. “Why in heaven’s name did you do that?” he asked. The crocodile cupped a foot to the back of its head and said, “Eh ?” 
+
+B)
+A concert pianist travelled to Africa in a bid to prove that music had the power to soothe the savage beast. He set up his grand piano in a small clearing beside a river, and began to play. One by one, animals appeared and soon he was surrounded by lions, giraffes, antelopes, warthogs, and leopards, all sitting peacefully together swaying and tapping their feet. The pianist had just started to play a second piece when a *deaf* crocodile splashed out of the river, grabbed the man with its jaws, and dragged him into the water. An agitated lion ran over to the water’s edge. “Why in heaven’s name did you do that?” he asked. The crocodile cupped a foot to the back of its head and said, “Eh ?” 
+**** 6.1
+A)
+A lion cub is in a restaurant with its parents. As they’re looking at the menu, the cub says: “Can I have a bunny?” 
+
+B)
+A *child* is in a restaurant with its parents. As they’re looking at the menu, the kid says: “Can I have a bunny?” 
+**** 6.2
+A)
+A senior citizen is driving on the highway. His wife calls him on his mobile phone and in a worried voice says, "Herman, be careful! I just heard on the radio that there was a madman driving the wrong way on Route 280". Herman says, "Not just one, there are hundreds!" 
+
+B)
+A senior citizen is driving *the wrong way* on the highway. His wife calls him on his cellphone and in a worried voice says, "Herman, be careful! I just heard on the radio that there was a madman driving the wrong way on Route 280". Herman says, "Not just one, there are hundreds!" 
+ 
+ 
+----- 
 * Task 3. Peer assignment 1: project idea
 - *DEADLINE for the assigment: 25/01 23:59*
 - *DEADLINE for the reviews: 29/01 23:59*
