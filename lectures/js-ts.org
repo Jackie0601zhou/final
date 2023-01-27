@@ -216,7 +216,7 @@ Function can be a property of an object. We call it a /method/.
 Lambda:
 
 
-** arrays
+*** arrays
 - Arrays are special kinds of objects
 - Arrays can contain a mixture of value types.
   
@@ -266,4 +266,98 @@ assignment. An object can inherit members from another object.
 for creating new objects and arrays. JavaScript literals were the
 inspiration for the JSON data interchange format.
 #+end_quote
+
+*** DOM
+ - https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+- https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+**** 
+...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* Get started with TypeScript
+https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+** Minimal environment
+Init and install typescript.
+#+begin_src
+npm init
+npm install typescript --save-dev
+#+end_src
+
+Compile JavaScript from TypeScript
+#+begin_src
+npx tsc index.ts
+#+end_src
+
+** Basics
+*** Type inference
+
+*** Defining types
+Basic types:
+- string
+- number
+- boolean
+- undefined
+- array
+- function
+  
+#+begin_src js
+const user = {
+  name: "Hayes",
+  id: 0,
+};
+#+end_src
+
+#+begin_src js
+    interface User {
+      name: string;
+      id: number;
+    }
+
+  type User = {
+    name: string;
+    id: number;
+  }
+#+end_src
+
+*** Composing types (union types)
+#+begin_src js
+function getLength(obj: string | string[]) {
+  return obj.length;
+}
+#+end_src
+*** Generics
+#+begin_src js
+type StringArray = Array<string>;
+#+end_src
+*** Type assertions
+#+begin_src js
+export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = ({})
+#+end_src
+*** Recap
+- ~any~
+- ~?~
+- ~!~
+- types instead of classes: ~Hypothesis~
+*** Typing functions
+*** Casting
+as
+*** Excercise
+Function that takes either a name (string) or an object containing a
+name, and returns a string.
+** Learning resources
+- https://www.typescriptlang.org/docs/handbook/intro.html
+- https://www.totaltypescript.com/tutorials/beginners-typescript/ (highly recommended!)
+- [[https://www.youtube.com/watch?v=BwuLxPH8IDs][(YouTube) TypeScript Course for Beginners 2020 - Learn TypeScript from Scratch!]]
 
