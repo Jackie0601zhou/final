@@ -39,7 +39,8 @@ interface SDSContext {
   sessionId: string;
   azureAuthorizationToken: string;
   audioCtx: any;
-  x;
+
+  title: any;
 }
 
 type SDSEvent =
