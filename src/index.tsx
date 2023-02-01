@@ -37,18 +37,6 @@ const machine = createMachine(
         ...dmMachine,
       },
 
-      gui: {
-        initial: "micOnly",
-        states: {
-          micOnly: {
-            on: { SHOW_ALTERNATIVES: "showAlternatives" },
-          },
-          showAlternatives: {
-            on: { SELECT: "micOnly" },
-          },
-        },
-      },
-
       asrtts: {
         initial: "init",
         states: {
@@ -212,10 +200,6 @@ const machine = createMachine(
         console.log("U>", context.recResult[0]["utterance"], {
           confidence: context.recResult[0]["confidence"],
         });
-      },
-      logIntent: (context: SDSContext) => {
-        /* context.nluData = event.data */
-        console.log("<< NLU intent: " + context.nluData.intent.name);
       },
       changeColour: (context) => {
         let color = context.recResult[0].utterance

@@ -4,13 +4,43 @@ function say(text: string): Action<SDSContext, SDSEvent> {
   return send((_context: SDSContext) => ({ type: "SPEAK", value: text }));
 }
 
-const grammar: {
-  [index: string]: { title?: string; day?: string; time?: string };
-} = {
-  "Lecture.": { title: "Dialogue systems lecture" },
-  "Lunch.": { title: "Lunch at the canteen" },
-  "on Friday": { day: "Friday" },
-  "at ten": { time: "10:00" },
+interface Grammar {
+  [index: string]: {
+    intent: string;
+    entities: {
+      [index: string]: string;
+    };
+  };
+}
+
+const grammar: Grammar = {
+  lecture: {
+    intent: "None",
+    entities: { title: "Dialogue systems lecture" },
+  },
+  lunch: {
+    intent: "None",
+    entities: { title: "Lunch at the canteen" },
+  },
+  "on friday": {
+    intent: "None",
+    entities: { day: "Friday" },
+  },
+  "at ten": {
+    intent: "None",
+    entities: { time: "10:00" },
+  },
+};
+
+const getEntity = (context: SDSContext, entity: string) => {
+  // lowercase the utterance and remove tailing "."
+  let u = context.recResult[0].utterance.toLowerCase().replace(/.$/g, "");
+  if (u in grammar) {
+    if (entity in grammar[u].entities) {
+      return grammar[u].entities[entity];
+    }
+  }
+  return false;
 };
 
 export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
@@ -33,11 +63,9 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         RECOGNISED: [
           {
             target: "info",
-            cond: (context) =>
-              "title" in (grammar[context.recResult[0].utterance] || {}),
+            cond: (context) => !!getEntity(context, "title"),
             actions: assign({
-              title: (context) =>
-                grammar[context.recResult[0].utterance].title!,
+              title: (context) => getEntity(context, "title"),
             }),
           },
           {
