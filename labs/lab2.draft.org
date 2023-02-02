@@ -21,7 +21,7 @@
 5. Within your Speech Service go to: *Resourse management → Keys and
    Endpoint* and save your KEY 1.
    
-** Preflight step 1. Run the example project
+** Preflight step 2. Run the example project
 1. [[https://nodejs.org/en/download/][Download and install NodeJS]] (LTS version).
 2. Fork and clone the example project (this project):
    https://github.com/GU-CLASP/dialogue-systems-1-2023. Keep an eye on
@@ -45,7 +45,7 @@
    yarn start
    #+end_src
 6. Open in your browser: http://localhost:1234/index.html 
-7. Unblock the pop-up window to see the state. 
+7. When you unblock the pop-up window, you will see an inspection of the state; this can be useful during development.
 
 ** Preflight step 3. Depoying the app
 1. Build and deploy the app:
@@ -60,7 +60,6 @@
 * Assignment
 - Task 1 ("appointment") :: Implementation of the finite state machine.
 - Task 2 ("intents") :: Implement an intent-based menu.
-- VG part :: Improve your app.
 
 ** Task 1. "Appointment"
 #+CAPTION: Flowchart for creating an appointment
