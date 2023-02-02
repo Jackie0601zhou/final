@@ -1,2 +1,118 @@
 #+OPTIONS: num:nil
+
 #+TITLE: Lab II. Basic dialogue management
+
+* Getting started with development environment
+** Preflight step 1. Create Azure account and enable speech services
+1. Apply for free student credits
+   https://azure.microsoft.com/en-us/free/students/. You should be
+   able to login with your GU account.
+2. Make sure that you are logged into the Azure portal (https://portal.azure.com/).
+3. Create a *Resource group* (you can use search field):
+   - Subscription: *Azure for students*
+   - Resource group: any name
+   - Region: *(Europe) North Europe*
+4. Create a *Speech service*:
+   - Name: any name
+   - Subscription: *Azure for students*
+   - Location: *(Europe) North Europe*
+   - Pricing tier: *Free (F0)*
+   - Resource group: group name from the previous step
+5. Within your Speech Service go to: *Resourse management → Keys and
+   Endpoint* and save your KEY 1.
+   
+** Preflight step 2. Run the example project
+1. [[https://nodejs.org/en/download/][Download and install NodeJS]] (LTS version).
+2. Fork and clone the example project (this project):
+   https://github.com/GU-CLASP/dialogue-systems-1-2023. Keep an eye on
+   the changes in the repo, it is still work in progress!
+3. Install *yarn dependency manager* and all the dependencies:
+   #+begin_src
+   npm install --global yarn
+   yarn
+   #+end_src
+4. Modify the file ~static/index.html~ with desired Azure Key and app languages.
+   #+begin_src 
+   <div
+     id="speechstate"
+     data-azure-key="<your azure key>" 
+     data-tts-voice="en-US"
+     data-asr-language="en-US"
+   ></div>
+   #+end_src
+5. Run the project:
+   #+begin_src sh
+   yarn start
+   #+end_src
+6. Open in your browser: http://localhost:1234/index.html 
+7. When you unblock the pop-up window, you will see an inspection of the state; this can be useful during development.
+
+** Preflight step 3. Depoying the app
+1. Build and deploy the app:
+   #+begin_src sh
+   yarn run deploy
+   #+end_src
+2. The app will be available at
+   https://<your_github_username>.github.io/<your_github_repository>
+
+*Note: Don’t hesitate to contact me if you have any issues with preflight steps.*
+
+* Assignment
+- Task 1 ("appointment") :: Implementation of the finite state machine.
+- Task 2 ("intents") :: Implement an intent-based menu.
+
+** Task 1. "Appointment"
+#+CAPTION: Flowchart for creating an appointment
+[[./img/flow.svg]]
+
+In this task you will need to implement the flowchart above.
+
+I have created a starting point for you, so you basically can use the
+project that you forked before:
+- In ~./src/index.tsx~ change the ~dmMachine~ import to:
+  #+begin_src js
+  import { dmMachine } from "./dmAppointment";
+  #+end_src
+- You will need to edit the state chart in ~./src/dmAppointment.ts~
+- To extend your context, make appropriate changes in
+  ~./src/react-app-env.d.ts~
+- You will need to extend the entities in the grammar (~const grammar~)
+  to understand more titles, times and dates.
+- Responses to the system's yes/no questions can be modeled either as
+  entities (e.g. boolean: true vs false) or intents (e.g. 'affirm' vs
+  'reject').   and "no", but also "of course", "no way" etc.
+
+
+** Task 2. "Knowledge base"
+In this task you will need to interact with [[https://duckduckgo.com/api][DuckDuckGo Instant Answer
+API]] to get information about famous people that you (probably) would
+like to meet.
+
+
+*** Invoking API from XState
+1. Use the invocation in order to get the result from the API: https://xstate.js.org/docs/guides/communication.html#invoking-promises
+2. The interface with the API is already implemented in the bottom of
+   ~dmAppointment.ts~.
+3. You will need to implement appropriate actions and transitions for
+   both ~onDone~ and ~onError~ events.
+
+*** Modifying the flow of the dialogue
+#+CAPTION: Full appointment flowchart
+[[./img/full-flow.svg]]
+
+1. You would need to have a "main menu" prompting a for an action that
+   user would like to do. There are two alternatives: "create a
+   meeting" and "who is X".
+2. In the latter case the input should be parsed and X should be
+   extracted and sent to the API.
+3. Based on the responce from the API, tell the user about the person,
+   and ask if they would like to meet them. You might need to create
+   additional contextual attributes to store your data.
+4. If they would like to meet them, set the title of the meeting to
+   "meeting with X" and proceed with asking about the day of the
+   meeting (see the flowchart above).
+
+* Submission
+- G part :: submit two links:
+  - link to your forked repo
+  - URL of the deployed app
