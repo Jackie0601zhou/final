@@ -59,7 +59,7 @@ const grammar: Grammar = {
   },
   "Weekly Meeting": {
     intent: "None",
-    entities: {"title": "Weekly Meeting"},
+    entities: {title: "Weekly Meeting"},
   },
   yes: {
     intent: "None",
@@ -95,136 +95,140 @@ const grammar: Grammar = {
   },  
   "6 AM": {
     intent: "None",
-    entities: {"time": "6 AM"},
+    entities: {time: "6 AM"},
   },  
   "7 AM": {
     intent: "None",
-    entities: {"time": "7 AM"},
+    entities: {time: "7 AM"},
   },  
   "8 AM": {
     intent: "None",
-    entities: {"time": "8 AM"},
+    entities: {time: "8 AM"},
   },  
   "9 AM": {
     intent: "None",
-    entities: {"time": "9 AM"},
+    entities: {time: "9 AM"},
   },  
   "10 AM": {
     intent: "None",
-    entities: {"time": "10 AM"},
+    entities: {time: "10 AM"},
   },  
   "11 AM": {
     intent: "None",
-    entities: {"time": "11 AM"},
+    entities: {time: "11 AM"},
   },    
   "12 PM": {
     intent: "None",
-    entities: {"time": "12 PM"},
+    entities: {time: "12 PM"},
   },  
   "1 PM": {
     intent: "None",
-    entities: {"time": "1 PM"},
+    entities: {time: "1 PM"},
   },  
   "2 PM": {
     intent: "None",
-    entities: {"time": "2 PM"},
+    entities: {time: "2 PM"},
   },  
   "3 PM": {
     intent: "None",
-    entities: {"time": "3 PM"},
+    entities: {time: "3 PM"},
   },  
   "4 PM": {
     intent: "None",
-    entities: {"time": "4 PM"},
+    entities: {time: "4 PM"},
   },  
   "5 PM": {
     intent: "None",
-    entities: {"time": "5 PM"},
+    entities: {time: "5 PM"},
   }, 
   "6 PM": {
     intent: "None",
-    entities: {"time": "6 PM"},
+    entities: {time: "6 PM"},
   },  
   "7 PM": {
     intent: "None",
-    entities: {"time": "7 PM"},
+    entities: {time: "7 PM"},
   },  
   "8 PM": {
     intent: "None",
-    entities: {"time": "8 PM"},
+    entities: {time: "8 PM"},
   },  
   "9 PM": {
     intent: "None",
-    entities: {"time": "9 PM"},
+    entities: {time: "9 PM"},
   },  
   "10 PM": {
     intent: "None",
-    entities: {"time": "10 PM"},
+    entities: {time: "10 PM"},
   }, 
     
   "one hour later": {
     intent: "None",
-    entities: {"time": "one hour later"},
+    entities: {time: "one hour later"},
   },  
   "two hours later": {
     intent: "None",
-    entities: {"time": "two hours later"},
+    entities: {time: "two hours later"},
   },
   "three hours later": {
     intent: "None",
-    entities: {"time": "three hours later"},
+    entities: {time: "three hours later"},
   },
   "in the morning": {
     intent: "None",
-    entities: {"time": "morning"},
+    entities: {time: "morning"},
   },
   "in the afternoon": {
     intent: "None",
-    entities: {"time": "afternoon"},
+    entities: {time: "afternoon"},
   },
   "in the evening": {
     intent: "None",
-    entities: {"time": "evening"},
+    entities: {time: "evening"},
   },
   "March 1, 2022": {
-    intent: "date",
+    intent: "None",
     entities: {
-      "date": "March 1, 2022"
+      date: "March 1, 2022"
     },
   },
   "on Friday": {
     intent: "None",
-    entities: {"date": "Friday"},
+    entities: {date: "Friday"},
   },  
   "on Saturday": {
     intent: "None",
-    entities: {"date": "Saturday"},
+    entities: {date: "Saturday"},
   },
   "on Sunday": {
     intent: "None",
-    entities: {"date": "Sunday"},
+    entities: {date: "Sunday"},
   },
   "on Monday": {
     intent: "None",
-    entities: {"date": "Monday"},
+    entities: {date: "Monday"},
   },
   "on Tuesday": {
     intent: "None",
-    entities: {"date": "Tuesday"},
+    entities: {date: "Tuesday"},
   },  
   "on Wednesday": {
     intent: "None",
-    entities: {"date": "Wednesday"},
+    entities: {date: "Wednesday"},
   },
   "on Thursday": {
     intent: "None",
-    entities: {"date": "Thursday"},
+    entities: {date: "Thursday"},
   },
   "create a meeting": {
     intent: "None",
     entities: { answer: "create a meeting" },
   },
   "ask a question about someone": {
+    intent: "None",
+    entities: { whois: "ask a 'who is' question" },
+  },
+  "ask about someone": {
     intent: "None",
     entities: { whois: "ask a 'who is' question" },
   },
