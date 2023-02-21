@@ -26,8 +26,8 @@ const grammar: Grammar = {
     entities: { title: "Lunch at the canteen" },
   },
   dinner: {
-    intent: "None",
-    entities: { title: "Lunch at the home" },
+    intent: "Dinner at the home",
+    entities: { title: "Dinner at the home" },
   },
   coffee: {
     intent: "None",
@@ -226,15 +226,15 @@ const grammar: Grammar = {
   },
   "ask a question about someone": {
     intent: "None",
-    entities: { whois: "ask a 'who is' question" },
+    entities: { answerperson: "ask a 'who is' question" },
   },
   "ask about someone": {
     intent: "None",
-    entities: { whois: "ask a 'who is' question" },
+    entities: { answerperson: "ask a 'who is' question" },
   },
   "ask a question": {
     intent: "None",
-    entities: { whois: "ask a 'who is' question" },
+    entities: { answerperson: "ask a 'who is' question" },
   },
 };
 
