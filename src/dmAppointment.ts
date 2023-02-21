@@ -18,11 +18,11 @@ interface Grammar {
 
 const grammar: Grammar = {
   lecture: {
-    intent: "None",
+    intent: "Dialogue systems lecture",
     entities: { title: "Dialogue systems lecture" },
   },
   lunch: {
-    intent: "None",
+    intent: "Lunch at the canteen",
     entities: { title: "Lunch at the canteen" },
   },
   dinner: {
@@ -30,35 +30,35 @@ const grammar: Grammar = {
     entities: { title: "Dinner at the home" },
   },
   coffee: {
-    intent: "None",
+    intent: "Take a coffee",
     entities: { title: "Take a coffee" }
   },
   breakfast: {
-    intent: "None",
+    intent: "Take breakfast",
     entities: { title: "Take breakfast" }
   },
   supermarket: {
-    intent: "None",
+    intent: "Go to supermarket",
     entities: { title: "Go to supermarket" }
   },
   friends: {
-    intent: "None",
+    intent: "Meet friends",
     entities: { title: "Meet friends" }
   },
   cats: {
-    intent: "None",
+    intent: "feed cats",
     entities: { title: "feed cats" }
   },
   exam: {
-    intent: "None",
+    intent: "exam",
     entities: { title: "exam"},
   },
   trip: {
-    intent: "None",
+    intent: "trip",
     entities: { title: "trip"},
   },
   "Weekly Meeting": {
-    intent: "None",
+    intent: "Weekly Meeting",
     entities: {title: "Weekly Meeting"},
   },
   yes: {
@@ -157,9 +157,9 @@ const grammar: Grammar = {
     intent: "None",
     entities: {time: "9 PM"},
   },  
-  "10 PM": {
+  "10:00 PM": {
     intent: "None",
-    entities: {time: "10 PM"},
+    entities: {time: "10:00 PM"},
   }, 
     
   "one hour later": {
@@ -187,38 +187,45 @@ const grammar: Grammar = {
     entities: {time: "evening"},
   },
   "March 1, 2022": {
-    intent: "None",
-    entities: {
-      date: "March 1, 2022"
+    intent: "March 1, 2022",
+    entities: {date: "March 1, 2022"
     },
   },
   "on Friday": {
-    intent: "None",
+    intent: "Friday",
     entities: {date: "Friday"},
   },  
   "on Saturday": {
-    intent: "None",
+    intent: "Saturday",
     entities: {date: "Saturday"},
   },
   "on Sunday": {
-    intent: "None",
+    intent: "Sunday",
     entities: {date: "Sunday"},
   },
   "on Monday": {
-    intent: "None",
+    intent: "Monday",
     entities: {date: "Monday"},
   },
   "on Tuesday": {
-    intent: "None",
+    intent: "Tuesday",
     entities: {date: "Tuesday"},
   },  
   "on Wednesday": {
-    intent: "None",
+    intent: "Wednesday",
     entities: {date: "Wednesday"},
   },
   "on Thursday": {
-    intent: "None",
+    intent: "Thursday",
     entities: {date: "Thursday"},
+  },
+  today: {
+    intent: "today",
+    entities: {date: "today"},
+  },  
+  tomorrow: {
+    intent: "tomorrow",
+    entities: {date: "tomorrow"},
   },
   "create a meeting": {
     intent: "None",
@@ -693,7 +700,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
       },
     },
     meetingcreated: {
-      entry: say("OK！You have a meeting titled ${context.title}, on ${context.date} at ${context.time}."),
+      entry: say('OK! You have a meeting titled ${context.title}, on ${context.date} at ${context.time}.'),
       on: { ENDSPEECH: "init" },
     },
     rethink: {
