@@ -47,6 +47,7 @@ interface SDSContext {
   reject:any;
   whois:any;
   answer:any;
+  answerperson:any;
   infomation:any;
   isWholeDay:boolean;
 }
