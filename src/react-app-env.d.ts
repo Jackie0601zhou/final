@@ -1,5 +1,5 @@
+/// <reference types="react-scripts" />
 
-export {};
 declare module "react-speech-kit";
 declare module "web-speech-cognitive-services/lib/SpeechServices/TextToSpeech";
 declare module "web-speech-cognitive-services/lib/SpeechServices/SpeechToText";
@@ -39,9 +39,15 @@ interface SDSContext {
   ttsAgenda: string;
   azureAuthorizationToken: string;
   audioCtx: any;
-  title: string;
-  time: string;
-  date:string;
+  title: any;
+  time: any;
+  date:any;
+  topic:string;
+  confirm:any;
+  reject:any;
+  whois:any;
+  answer:any;
+  infomation:any;
   isWholeDay:boolean;
 }
 
@@ -58,7 +64,3 @@ type SDSEvent =
   | { type: "TIMEOUT" }
   | { type: "SPEAK"; value: string }
   | { type: "IS_WHOLE_DAY"; isWholeDay: boolean };
-
-
-  export { SDSContext };
-  export { SDSEvent};
