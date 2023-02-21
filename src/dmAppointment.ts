@@ -321,7 +321,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
               
             },
           {
-            target: ".nomatch",
+            target: ".notmatch",
           },
         ],
         TIMEOUT: ".prompt",
