@@ -69,7 +69,7 @@ const grammar: Grammar = {
     intent: "None",
     entities: {confirm:"sure"},
   },
-  ok" {
+  ok: {
     intent: "None",
     entities: {confirm:"ok"},
   },
@@ -234,8 +234,6 @@ const grammar: Grammar = {
   },
 };
 
-    
-};
 
 
 
@@ -263,7 +261,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         CLICK:"welcome",
       },
     },
-    welcome:
+    welcome:{
       initial: "prompt",
       on:{
         RECOGNISED: [
@@ -293,7 +291,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
           on:{ENDSPEECH:"ask"},
         },
         ask:{
-          entry:sned ("LISTEN"),
+          entry:send ("LISTEN"),
         },
         notmatch:{
           entry:say("Sorry I don't understand. Would you like to create a meeting or ask about someone?"),
