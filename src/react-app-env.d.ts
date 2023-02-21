@@ -49,7 +49,6 @@ interface SDSContext {
   answer:any;
   answerperson:any;
   info:any;
-  isWholeDay:boolean;
 }
 
 type SDSEvent =
@@ -63,5 +62,4 @@ type SDSEvent =
   | { type: "ENDSPEECH" }
   | { type: "LISTEN" }
   | { type: "TIMEOUT" }
-  | { type: "SPEAK"; value: string }
-  | { type: "IS_WHOLE_DAY"; isWholeDay: boolean };
+  | { type: "SPEAK"; value: string };
