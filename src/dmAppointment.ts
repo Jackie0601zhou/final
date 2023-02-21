@@ -359,6 +359,10 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
           })),   
           on: { ENDSPEECH: "ask" },
         },
+        prompt: {
+          entry: say("Whom would you want to know about?"),
+          on: { ENDSPEECH: "ask" },
+        },
         ask: {
           entry: send("LISTEN"),
         },
