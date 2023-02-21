@@ -315,7 +315,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
       on: {
         RECOGNISED: [
           { target: ".info",
-            actions: assign({personIs:  
+            actions: assign({whois:  
               context => {return context.recResult[0].utterance}
             })
               
@@ -355,7 +355,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         failure: {
           entry: send((context) => ({
             type: "SPEAK",
-            value: `Sorry, I can't find any information about ${context.personIs}. Anyone else you want to know?`
+            value: `Sorry, I can't find any information about ${context.whois}. Anyone else you want to know?`
           })),   
           on: { ENDSPEECH: "ask" },
         },
@@ -470,7 +470,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
             target: "date",
             cond: (context) => !!getEntity(context, "date"),
             actions: assign({
-              day: (context) => getEntity(context, "date"),
+              date: (context) => getEntity(context, "date"),
             }), 
           },
           {
@@ -578,7 +578,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         prompt: {
           entry: send((context) => ({
             type: "SPEAK",
-            value: `Do you want me to create a meeting titled ${context.title}, on ${context.day} for the whole day?`,
+            value: `Do you want me to create a meeting titled ${context.title}, on ${context.date} for the whole day?`,
           })),
           on: { ENDSPEECH: "ask" },
         },
