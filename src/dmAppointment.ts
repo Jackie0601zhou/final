@@ -1,11 +1,9 @@
 
 import { MachineConfig, send, Action, assign } from "xstate";
+import { createMachine } from 'xstate';
 
-import { SDSContext } from '/Users/jackie/Desktop/dialogue-systems-1-2023/src/react-app-env';
-import { SDSEvent } from '/Users/jackie/Desktop/dialogue-systems-1-2023/src/react-app-env';
-
-function say(text: (context: SDSContext) => string): Action<SDSContext, SDSEvent> {
-  return send((context: SDSContext) => ({ type: "SPEAK", value: text(context) }));
+function say(text: string): Action<SDSContext, SDSEvent> {
+  return send((_context: SDSContext) => ({ type: "SPEAK", value: text}));
 }
 
 
@@ -19,65 +17,174 @@ interface Grammar {
 }
 
 const grammar: Grammar = {
-  "create a meeting": {
-    intent: "createMeeting",
-    entities: {},
+  lecture: {
+    intent: "None",
+    entities: { title: "Dialogue systems lecture" },
   },
-  "who is :name": {
-    intent: "getPersonInfo",
-    entities: {
-      "name": "",
-    },
+  lunch: {
+    intent: "None",
+    entities: { title: "Lunch at the canteen" },
   },
-  "whole day": {
-    intent: "wholeDay",
-    entities: {},
+  dinner: {
+    intent: "None",
+    entities: { title: "Lunch at the home" },
   },
-  "yes": {
-    intent: "affirm",
-    entities: {},
+  coffee: {
+    intent: "None",
+    entities: { title: "Take a coffee" }
   },
-  "no": {
-    intent: "reject",
-    entities: {},
+  breakfast: {
+    intent: "None",
+    entities: { title: "Take breakfast" }
   },
-  "of course": {
-    intent: "affirm",
-    entities: {},
+  supermarket: {
+    intent: "None",
+    entities: { title: "Go to supermarket" }
   },
-  "no way": {
-    intent: "reject",
-    entities: {},
+  friends: {
+    intent: "None",
+    entities: { title: "Meet friends" }
   },
-  "Lecture": {
-    intent: "title",
-    entities: {
-      "title": "Lecture"
-    },
+  cats: {
+    intent: "None",
+    entities: { title: "feed cats" }
+  },
+  exam: {
+    intent: "None",
+    entities: { title: "exam"},
+  },
+  trip: {
+    intent: "None",
+    entities: { title: "trip"},
   },
   "Weekly Meeting": {
-    intent: "title",
-    entities: {
-      "title": "Weekly Meeting"
-    },
+    intent: "None",
+    entities: {"title": "Weekly Meeting"},
   },
-  "10:00 AM": {
-    intent: "time",
-    entities: {
-      "time": "10:00 AM"
-    },
+  yes: {
+    intent: "None",
+    entities: {confirm:"yes"},
   },
-  "3:30 PM": {
-    intent: "time",
-    entities: {
-      "time": "3:30 PM"
-    },
+  sure: {
+    intent: "None",
+    entities: {confirm:"sure"},
   },
+  ok" {
+    intent: "None",
+    entities: {confirm:"ok"},
+  },
+  "of course": {
+    intent: "None",
+    entities: {confirm:"of course"},
+  },  
+  right: {
+    intent: "None",
+    entities: {confirm:"right"},
+  },
+  no: {
+    intent: "None",
+    entities: {reject:"no"},
+  },  
+  not: {
+    intent: "None",
+    entities: {reject:"not"},
+  },  
+  "no way": {
+    intent: "None",
+    entities: {reject:"no way"},
+  },  
+  "6 AM": {
+    intent: "None",
+    entities: {"time": "6 AM"},
+  },  
+  "7 AM": {
+    intent: "None",
+    entities: {"time": "7 AM"},
+  },  
+  "8 AM": {
+    intent: "None",
+    entities: {"time": "8 AM"},
+  },  
+  "9 AM": {
+    intent: "None",
+    entities: {"time": "9 AM"},
+  },  
+  "10 AM": {
+    intent: "None",
+    entities: {"time": "10 AM"},
+  },  
+  "11 AM": {
+    intent: "None",
+    entities: {"time": "11 AM"},
+  },    
+  "12 PM": {
+    intent: "None",
+    entities: {"time": "12 PM"},
+  },  
+  "1 PM": {
+    intent: "None",
+    entities: {"time": "1 PM"},
+  },  
+  "2 PM": {
+    intent: "None",
+    entities: {"time": "2 PM"},
+  },  
+  "3 PM": {
+    intent: "None",
+    entities: {"time": "3 PM"},
+  },  
+  "4 PM": {
+    intent: "None",
+    entities: {"time": "4 PM"},
+  },  
+  "5 PM": {
+    intent: "None",
+    entities: {"time": "5 PM"},
+  }, 
+  "6 PM": {
+    intent: "None",
+    entities: {"time": "6 PM"},
+  },  
+  "7 PM": {
+    intent: "None",
+    entities: {"time": "7 PM"},
+  },  
+  "8 PM": {
+    intent: "None",
+    entities: {"time": "8 PM"},
+  },  
+  "9 PM": {
+    intent: "None",
+    entities: {"time": "9 PM"},
+  },  
+  "10 PM": {
+    intent: "None",
+    entities: {"time": "10 PM"},
+  }, 
+    
   "one hour later": {
-    intent: "time",
-    entities: {
-      "time": "one hour later"
-    },
+    intent: "None",
+    entities: {"time": "one hour later"},
+  },  
+  "two hours later": {
+    intent: "None",
+    entities: {"time": "two hours later"},
+  },
+  "three hours later": {
+    intent: "None",
+    entities: {"time": "three hours later"},
+  },
+  "in the morning": {
+    intent: "None",
+    entities: {"time": "morning"},
+  },
+  "in the afternoon": {
+    intent: "None",
+    entities: {"time": "afternoon"},
+  },
+  "in the evening": {
+    intent: "None",
+    entities: {"time": "evening"},
   },
   "March 1, 2022": {
     intent: "date",
@@ -86,26 +193,53 @@ const grammar: Grammar = {
     },
   },
   "on Friday": {
-    intent: "date",
-    entities: {
-      "date": "on Friday"
-    },
+    intent: "None",
+    entities: {"date": "Friday"},
+  },  
+  "on Saturday": {
+    intent: "None",
+    entities: {"date": "Saturday"},
+  },
+  "on Sunday": {
+    intent: "None",
+    entities: {"date": "Sunday"},
+  },
+  "on Monday": {
+    intent: "None",
+    entities: {"date": "Monday"},
+  },
+  "on Tuesday": {
+    intent: "None",
+    entities: {"date": "Tuesday"},
+  },  
+  "on Wednesday": {
+    intent: "None",
+    entities: {"date": "Wednesday"},
+  },
+  "on Thursday": {
+    intent: "None",
+    entities: {"date": "Thursday"},
+  },
+  "create a meeting": {
+    intent: "None",
+    entities: { answer: "create a meeting" },
+  },
+  "ask a question about someone": {
+    intent: "None",
+    entities: { whois: "ask a 'who is' question" },
+  },
+  "ask a question": {
+    intent: "None",
+    entities: { whois: "ask a 'who is' question" },
   },
 };
 
-const getPersonInfo = (context: SDSContext) => {
-  const name = context.recResult[0].matches.name;
-  if (name === "Jack" || name === "Samantha") {
-    return `${name} is the lead developer on this project. Do you want to meet them?`;
-  } else if (name === "Emma" || name === "David") {
-    return `${name} is one of our marketing specialists. Do you want to meet them?`;
-  } else {
-    return `I'm sorry, I don't know who ${name} is. Is there someone else you'd like to know about?`;
-  }
+    
 };
 
 
-const getIntent = (context: SDSContext) => {
+
+const getEntity = (context: SDSContext,entity: string) => {
   // lowercase the utterance and remove tailing "."
   let u = context.recResult[0].utterance.toLowerCase().replace(/.$/g, "");
   if (u in grammar) {
@@ -114,273 +248,464 @@ const getIntent = (context: SDSContext) => {
   return false;
 };
 
-const events = {
-  INIT: "INIT"
-};
-
-const getPersonInfo = (context: SDSContext) => {
-  const name = context.recResult[0].matches.name;
-
-  // Use the fetch function to get information about the person from the DuckDuckGo Instant Answer API
-  fetch(`https://api.duckduckgo.com/?q=${name}&format=json&pretty=1`)
-    .then(response => response.json())
-    .then(data => {
-      if (data.Abstract) {
-        // If the API returns an Abstract, use it as the person's description
-        return say(() => `${name} is ${data.Abstract}`)(context);
-      } else {
-        // Otherwise, use a default message
-        return say(() => `I'm sorry, I don't have any information about ${name}.`)(context);
-      }
-    })
-    .catch(error => {
-      console.log("Error getting person info", error);
-      return say(() => "I'm sorry, there was an error getting information about that person.")(context);
-    });
-};
-
-
-
 
 export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
-  initial: "promptAction",
+  initial: "idle",
   states: {
-    promptAction: {
-      entry: [
-        (context, event) => {
-          // Check if speech synthesis is supported
-          if ('speechSynthesis' in window) {
-            // Get list of available voices
-            let voices = window.speechSynthesis.getVoices();
-            if (voices.length > 0) {
-              // If there are voices, speak the text
-              return say(() => `Hi ${context.username}! What would you like to do? Create a meeting or ask about someone?`)(context, event);
-            } else {
-              console.log("No voices available");
-            }
-          } else {
-            console.log("Speech synthesis not supported");
-          }
-        },
-        () => console.log("Hi {username}! What would you like to do? Create a meeting or ask about someone?"), // add console.log here
-      ],
-      on: { ENDSPEECH: "idle" },
-    },
-
     idle: {
       on: {
+        CLICK:"init",
+      },
+    },
+    init:{
+      on:{
+        TTS_READY:"welcome",
+        CLICK:"welcome",
+      },
+    },
+    welcome:
+      initial: "prompt",
+      on:{
         RECOGNISED: [
           {
-            target: "createMeeting",
-            cond: (context) => context.recResult[0].intent.name === "createMeeting",
-            actions: [say(() => "Let's create a meeting."), () => console.log("Let's create a meeting")],
+            target: "Meeting",
+            cond: (context) =>  !!getEntity(context,"answer"),
+            actions: assign({
+              answer:(context) => getEntity(context,"answer"),
+            }), 
           },
           {
             target: "getPersonInfo",
-            cond: (context) => context.recResult[0].intent.name === "getPersonInfo",
-            actions: [say(() => getPersonInfo(context)), () => console.log(`Asked about ${context.recResult[0].matches.name}`)],
-          },
-        ],
-      },
-    },
-
-    createMeeting: {
-      on: {
-        ENDSPEECH: "askTitle",
-      },
-    },
-
-    askTitle: {
-      entry: [say(() => "What is it about?"), () => console.log("What is it about?")],
-      on: { ENDSPEECH: "askDate" },
-    },
-
-    askDate: {
-      entry: [say(() => "On which day is it?")],
-      on: { ENDSPEECH: "askWholeDay" },
-    },
-
-    askWholeDay: {
-      entry: [say(() => "Will it take the whole day?")],
-      on: {
-        IS_WHOLE_DAY: [
-          {
-            target: "confirm",
-            cond: (context) => getIntent(context) === "wholeDay",
+            cond: (context) =>  !!getEntity(context,"answerperson"),
             actions: assign({
-              isWholeDay: true,
-            }),
+              answer:(context) => getEntity(context,"answerperson"),
+            }), 
           },
           {
-            target: "askTime",
-            cond: (context) => getIntent(context) !== "wholeDay",
-            actions: assign({
-              isWholeDay: false,
-            }),
+            target:".notmatch"
           },
         ],
+        TIMEOUT:".prompt",
+      },
+      states:{
+        prompt:{
+          entry: say("Hello Jackie! Would you like to create a meeting or ask about someone?"),
+          on:{ENDSPEECH:"ask"},
+        },
+        ask:{
+          entry:sned ("LISTEN"),
+        },
+        notmatch:{
+          entry:say("Sorry I don't understand. Would you like to create a meeting or ask about someone?"),
+          on:{ENDSPEECH:"ask"},
+        },
       },
     },
-
-    askTime: {
-      entry: [say(() => "What time is your meeting?")],
-      on: { ENDSPEECH: "confirm" },
-    },
-
-    confirm: {
-      entry: say(
-        (context) =>
-          `Do you want me to create a meeting titled ${context.title} on ${context.date} ${
-            context.isWholeDay
-              ? "for the whole day"
-              : `at ${context.time}`
-          }?`
-      ),
-      on: { ENDSPEECH: "askConfirm" },
-    },
-
-    askConfirm: {
-      entry: send("LISTEN"),
+    Meeting: {
+      entry: say("Ok!"),
+      on: { ENDSPEECH: "createmeeting" },
+      },
+    getPersonInfo: {
+      entry: send((context) => ({
+        type: "SPEAK",
+        value: `OK, ${context.answerperson}.`,
+      })),
+      on: { ENDSPEECH: "WhoIsX" }, // askQuestion ==> What would you like to ask?
+      },
+    WhoIsX: {
+      initial: "prompt",
       on: {
         RECOGNISED: [
+          { target: ".info",
+            actions: assign({personIs:  
+              context => {return context.recResult[0].utterance}
+            })
+              
+            },
           {
-            target: "idle",
-            cond: (context) => getIntent(context) === "no",
-            actions: [
-              say(() => "Okay, let's start again."),
-              () => console.log("User said 'no', starting over.")
-            ],
-          },
-          {
-            target: "createMeetingConfirmed", // new final state
-            cond: (context) => getIntent(context) === "yes",
-            actions: [
-              say((context) => `Your meeting titled "${context.title}" has been created on ${context.date} ${
-                context.isWholeDay
-                  ? "for the whole day"
-                  : `at ${context.time}`
-                }`
-              ),
-              () => console.log("User said 'yes', meeting created.")
-            ],
-          },
-          {
-            target: "askConfirm",
-            cond: (context) => !getIntent(context),
-            actions: [
-              say(() => "I'm sorry, I didn't understand. Please say 'yes' or 'no'."),
-              () => console.log("User did not say 'yes' or 'no', asking again.")
-            ],
+            target: ".nomatch",
           },
         ],
+        TIMEOUT: ".prompt",
       },
-    },
-    
-
-    createMeetingConfirmed: {
-      type: "final",
-    },
-
-    getPersonInfo: {
-      entry: [
-        (context, event) => {
-          let name = context.recResult[0].matches.name;
-          if (name in people) {
-            return say(() => `${name} is ${people[name]}. Do you want to meet them?`)(context, event);
-          } else {
-            return say(() => `${name} is not in my records. Would you like to provide more information about them?`)(context, event);
+      states: {
+        info: {
+          invoke: {
+            id: 'getInfo',
+            src: (context, event) => kbRequest(context.whois),
+            onDone: [{
+              target: 'success',
+              cond: (context, event) => event.data.Abstract !== "",
+              actions: assign({ info: (context, event) => event.data })
+            },
+            {
+              target: 'failure',
+            },
+          ],
+            onError: {
+              target: 'failure',
+            }
           }
         },
-        (context) => console.log(`Asked about ${context.recResult[0].matches.name}`),
-      ],
-      on: {
-        RECOGNISED: [
-          {
-            target: "meetPerson",
-            cond: (context) => getIntent(context) === "yes",
-            actions: [
-              assign({
-                title: (context) => `Meeting with ${context.recResult[0].matches.name}`,
-              }),
-              () => console.log(`User said 'yes', meeting with ${context.recResult[0].matches.name}.`),
-            ],
-          },
-          {
-            target: "askPersonInfo",
-            cond: (context) => getIntent(context) === "no",
-            actions: [
-              assign({
-                name: (context) => context.recResult[0].matches.name,
-              }),
-              say(() => "What would you like to know about them?"),
-              () => console.log("User said 'no', asking about person information."),
-            ],
-          },
-          {
-            target: "getPersonInfo",
-            cond: (context) => !getIntent(context),
-            actions: [say(() => "I'm sorry, I didn't understand. Can you please answer with 'yes' or 'no'?"), () => console.log("User did not say 'yes' or 'no', asking again.")],
-          },
-        ],
-      },
-    },
-    askPersonInfo: {
-      entry: send("LISTEN"),
-      on: {
-        RECOGNISED: [
-          {
-            target: "idle",
-            actions: [
-              (context, event) => {
-                let name = context.name;
-                let info = context.recResult[0].utterance;
-                people[name] = info;
-                console.log(`Added ${info} to ${name}'s records.`);
-              },
-              say(() => `Thanks for letting me know. Is there anything else I can help you with?`),
-            ],
-          },
-        ],
-      },
-    },
-
-    meetPerson: {
-      entry: [
-        (context) => {
-          let name = context.recResult[0].matches.name;
-          let title = context.title;
-          return say(() => `Great! ${title} has been scheduled with ${name}. On which day would you like to schedule the meeting?`)(context);
+        success: {
+          entry: send((context) => ({
+            type: "SPEAK",
+            value: `Here is some information about ${context.whois} ${context.info.Abstract}`
+          })),
+          on: {ENDSPEECH: "#meetX"}
         },
-        (context) => console.log(`Scheduled a meeting with ${context.recResult[0].matches.name}`),
-      ],
-      on: {
-        ENDSPEECH: "askDate",
+        failure: {
+          entry: send((context) => ({
+            type: "SPEAK",
+            value: `Sorry, I can't find any information about ${context.personIs}. Anyone else you want to know?`
+          })),   
+          on: { ENDSPEECH: "ask" },
+        },
+        ask: {
+          entry: send("LISTEN"),
+        },
+        notmatch: {
+          entry: say(
+            "Sorry, could you please repeat aganin?"
+          ),
+          on: { ENDSPEECH: "ask" },
+        },
       },
+    },
+    meetX: {
+      id:"meetX",
+      initial: "prompt",
+      on: {
+        RECOGNISED: [
+          {
+            target: "refusemeeting",
+            cond: (context) => !!getEntity(context, "reject"),
+            actions: assign({
+              reject: (context) => getEntity(context, "reject"),
+            }), 
+          },
+          {
+            target: "acceptmeeting",
+            cond: (context) => !!getEntity(context, "confirm"),
+            actions: assign({
+              confirm: (context) => getEntity(context, "confirm"),
+            }), 
+          },
+          {
+            target: ".notmatch",
+          },
+        ],
+        TIMEOUT: ".prompt",
+      },
+      states: {
+        prompt: {
+          entry: say("Do you want to meet them?"),
+          on: { ENDSPEECH: "ask" },
+        },
+        ask: {
+          entry: send("LISTEN"),
+        },
+        notmatch: {
+          entry: say(
+            "Sorry, could you please repeat aganin?"
+          ),
+          on: {ENDSPEECH: "prompt"},
+        },
+      },
+    },
+    refusemeeting: {
+      entry: say("OK!"),
+      on: { ENDSPEECH: "init" },
+    },
+    acceptmeeting: {
+      entry: [
+        say("OK! Let's schedule a meeting!"),
+        assign((context) => ({title: `meeting with ${context.whois}`}))
+      ],
+      on: { ENDSPEECH: "askDate" },
+      },
+    createmeeting: {
+      initial: "prompt",
+      on: {
+        RECOGNISED: [
+          {
+            target: "info",
+            cond: (context ) => !!getEntity(context, "title"),
+            actions: assign({
+              title: (context) => getEntity(context, "title"),
+            }),
+          },
+          {
+            target: ".notmatch",
+          },
+        ],
+        TIMEOUT: ".prompt",
+      },
+      states: {
+        prompt: {
+          entry: say("Let's create a meeting. What is it about?"),
+          on: { ENDSPEECH: "ask" },
+        },
+        ask: {
+          entry: send("LISTEN"),
+        },
+        notmatch: {
+          entry: say(
+            "Sorry, I don't know what it is. Please tell me what is the meeting about?"
+          ),
+          on: { ENDSPEECH: "ask" },
+        },
+      },
+    },
+    info: {
+      entry: send((context) => ({
+        type: "SPEAK",
+        value: `OK, ${context.title}`,
+      })),
+      on: { ENDSPEECH: "askDate" },
+      },
+    askDate: {
+      initial: "prompt",
+      on: {
+        RECOGNISED: [
+          {
+            target: "date",
+            cond: (context) => !!getEntity(context, "date"),
+            actions: assign({
+              day: (context) => getEntity(context, "date"),
+            }), 
+          },
+          {
+            target: ".notmatch",
+          },
+        ],
+        TIMEOUT: ".prompt",
+      },
+      states: {
+        prompt: {
+          entry: say("On which day is the meeting?"),
+          on: { ENDSPEECH: "ask" },
+        },
+        ask: {
+          entry: send("LISTEN"),
+        },
+        notmatch: {
+          entry: say(
+            "Sorry, I don't understand! Could you please repeat again?"
+          ),
+          on: { ENDSPEECH: "ask" },
+        },
+      },
+    },
+    date: {
+      entry: send((context) => ({
+        type: "SPEAK",
+        value: `OK, meeting scheduled for ${context.date}`,
+      })),
+      on: { ENDSPEECH: "isWholeDay" },
+    },
+    isWholeDay: {
+      initial: "prompt",
+      on: {
+        RECOGNISED: [
+          {
+            target: "negative",
+            cond: (context) => !!getEntity(context, "reject"),
+            actions: assign({
+              reject: (context) => getEntity(context, "reject"),
+            }), 
+          },
+          {
+            target: "positive",
+            cond: (context) => !!getEntity(context, "confirm"),
+            actions: assign({
+              confirm: (context) => getEntity(context, "confirm"),
+            }), 
+          },
+          {
+            target: ".notmatch",
+          },
+        ],
+        TIMEOUT: ".prompt",
+      },
+      states: {
+        prompt: {
+          entry: say("Will it take the whole day?"),
+          on: { ENDSPEECH: "ask" },
+        },
+        ask: {
+          entry: send("LISTEN"),
+        },
+        notmatch: {
+          entry: say(
+            "Sorry, I don't understand. Will it take the whole day?"
+          ),
+          on: { ENDSPEECH: "ask" },
+        },
+      },
+    },
+    negative: {
+      entry: say("Not for the whole day."),
+      on: { ENDSPEECH: "Time" },
+    },
+    positive: {
+      entry: say("For the whole day."),
+      on: { ENDSPEECH: "confirmwholeday" },
+    },
+    confirmWholeDay: {
+      initial: "prompt",
+      on: {
+        RECOGNISED: [
+          {
+            target: "wholeDayPositive",
+            cond: (context) => !!getEntity(context, "confirm"),
+            actions: assign({
+              confirm: (context) => getEntity(context, "confirm"),
+            }), 
+          },
+          {
+            target: "wholeDayNegative",
+            cond: (context) => !!getEntity(context, "reject"),
+            actions: assign({
+              reject: (context) => getEntity(context, "reject"),
+            }), 
+          },
+          {
+            target: ".notmatch",
+          },
+        ],
+        TIMEOUT: ".prompt",
+      },
+      states: {
+        prompt: {
+          entry: send((context) => ({
+            type: "SPEAK",
+            value: `Do you want me to create a meeting titled ${context.title}, on ${context.day} for the whole day?`,
+          })),
+          on: { ENDSPEECH: "ask" },
+        },
+        ask: {
+          entry: send("LISTEN"),
+        },
+        notmatch: {
+          entry: say(
+            "Sorry, I don't understand. Do you want me to create a meeting titled ${context.title}, on ${context.date} for the whole day?"
+          ),
+          on: { ENDSPEECH: "ask" },
+        },
+      },
+    },
+    wholeDayPositive: {
+      entry: say("Great!"),
+      on: { ENDSPEECH: "meetingcreated" },
+    },
+    wholeDayNegative: {
+      entry: say("Very well! Starting over!"),
+      on: { ENDSPEECH: "welcome" },
+    },
+    Time: {
+      initial: "prompt",
+      on: {
+        RECOGNISED: [
+          {
+            target: "time",
+            cond: (context) => !!getEntity(context, "time"),
+            actions: assign({
+              time: (context) => getEntity(context, "time"),
+            }), 
+          },
+          {
+            target: ".notmatch",
+          },
+        ],
+        TIMEOUT: ".prompt",
+      },
+      states: {
+        prompt: {
+          entry: say("What time is it?"),
+          on: { ENDSPEECH: "ask" },
+        },
+        ask: {
+          entry: send("LISTEN"),
+        },
+        notmatch: {
+          entry: say(
+            "Sorry, I don't understand. What time is your meeting?"
+          ),
+          on: { ENDSPEECH: "ask" },
+        },
+      },
+    },
+    time: {
+      entry: send((context) => ({
+        type: "SPEAK",
+        value: `OK, time is set for ${context.time}`,
+      })),
+      on: { ENDSPEECH: "meetConfirm" },
+    },
+    meetConfirm: {
+      initial: "prompt",
+      on: {
+        RECOGNISED: [
+          {
+            target: "meetingcreated",
+            cond: (context) => !!getEntity(context, "confirm"),
+            actions: assign({
+              confirm: (context) => getEntity(context, "confirm"),
+            }), 
+          },
+          {
+            target: "rethink",
+            cond: (context) => !!getEntity(context, "reject"),
+            actions: assign({
+              reject: (context) => getEntity(context, "reject"),
+            }), 
+          },
+          {
+            target: ".notmatch",
+          },
+        ],
+        TIMEOUT: ".prompt",
+      },
+      states: {
+        prompt: {
+          entry: send((context) => ({
+            type: "SPEAK",
+            value: `Do you want me to create a meeting titled ${context.title}, on ${context.date} at ${context.time}?`,
+          })),
+          on: { ENDSPEECH: "ask" },
+        },
+        ask: {
+          entry: send("LISTEN"),
+        },
+        notmatch: {
+          entry: say(
+            "Sorry, I don't understand. Could you repeat again?"
+          ),
+          on: { ENDSPEECH: "ask" },
+        },
+      },
+    },
+    meetingcreated: {
+      entry: say("OK！You have a meeting titled ${context.title}, on ${context.date} at ${context.time}."),
+      on: { ENDSPEECH: "init" },
+    },
+    rethink: {
+      entry: say("ok!, starting over!"),
+      on: { ENDSPEECH: "welcome" },
     },
   },
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const kbRequest = (text: string) =>
+  fetch(
+    new Request(
+      `https://cors.eu.org/https://api.duckduckgo.com/?q=${text}&format=json&skip_disambig=1`
+    )
+  ).then((data) => data.json());
+            
+            
+            
+            
+      
