@@ -554,7 +554,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
       entry: say("For the whole day."),
       on: { ENDSPEECH: "confirmwholeday" },
     },
-    confirmWholeDay: {
+    confirmWholeday: {
       initial: "prompt",
       on: {
         RECOGNISED: [
