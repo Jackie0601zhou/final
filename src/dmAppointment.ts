@@ -232,15 +232,15 @@ const grammar: Grammar = {
     entities: { answer: "create a meeting" },
   },
   "ask a question about someone": {
-    intent: "None",
+    intent: "ask a 'who is' question",
     entities: { answerperson: "ask a 'who is' question" },
   },
   "ask about someone": {
-    intent: "None",
+    intent: "ask a 'who is' question",
     entities: { answerperson: "ask a 'who is' question" },
   },
   "ask a question": {
-    intent: "None",
+    intent: "ask a 'who is' question",
     entities: { answerperson: "ask a 'who is' question" },
   },
 };
@@ -482,7 +482,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
       on: {
         RECOGNISED: [
           {
-            target: "date",
+            target: "day",
             cond: (context) => !!getEntity(context, "date"),
             actions: assign({
               date: (context) => getEntity(context, "date"),
@@ -510,7 +510,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         },
       },
     },
-    date: {
+    day: {
       entry: send((context) => ({
         type: "SPEAK",
         value: `OK, meeting scheduled for ${context.date}`,
