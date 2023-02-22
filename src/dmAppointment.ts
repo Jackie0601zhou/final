@@ -343,7 +343,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
             type: "SPEAK",
             value: `Here is some information about ${context.whois} ${context.info.Abstract}`
           })),
-          on: {ENDSPEECH: "#meetX"}
+          on: {ENDSPEECH: "meetX"}
         },
         failure: {
           entry: send((context) => ({
