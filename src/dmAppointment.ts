@@ -173,31 +173,31 @@ const grammar: Grammar = {
     entities: {date: "March 1, 2022"
     },
   },
-  Friday: {
+  friday: {
     intent: "Friday",
     entities: {date: "Friday"},
   },  
-  Saturday: {
+  saturday: {
     intent: "Saturday",
     entities: {date: "Saturday"},
   },
-  Sunday: {
+  sunday: {
     intent: "Sunday",
     entities: {date: "Sunday"},
   },
-  Monday: {
+  monday: {
     intent: "Monday",
     entities: {date: "Monday"},
   },
-  Tuesday: {
+  tuesday: {
     intent: "Tuesday",
     entities: {date: "Tuesday"},
   },  
-  Wednesday: {
+  wednesday: {
     intent: "Wednesday",
     entities: {date: "Wednesday"},
   },
-  Thursday: {
+  thursday: {
     intent: "Thursday",
     entities: {date: "Thursday"},
   },
