@@ -262,14 +262,14 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
             target: "Meeting",
             cond: (context) =>  !!getEntity(context,"meetinganswer"),
             actions: assign({
-              answer:(context) => getEntity(context,"meetinganswer"),
+              meetinganswer:(context) => getEntity(context,"meetinganswer"),
             }), 
           },
           {
             target: "getPersonInfo",
             cond: (context) =>  !!getEntity(context,"answerperson"),
             actions: assign({
-              answer:(context) => getEntity(context,"answerperson"),
+              answerperson:(context) => getEntity(context,"answerperson"),
             }), 
           },
           {
