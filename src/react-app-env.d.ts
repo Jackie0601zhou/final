@@ -46,7 +46,7 @@ interface SDSContext {
   confirm:any;
   reject:any;
   whois:any;
-  answer:any;
+  meetinganswer:any;
   answerperson:any;
   info:any;
 }
