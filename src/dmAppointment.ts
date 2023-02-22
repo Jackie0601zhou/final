@@ -93,97 +93,79 @@ const grammar: Grammar = {
     intent: "None",
     entities: {reject:"no way"},
   },  
-  "6 AM": {
-    intent: "None",
-    entities: {time: "6 AM"},
-  },  
-  "7 AM": {
-    intent: "None",
-    entities: {time: "7 AM"},
-  },  
-  "8 AM": {
-    intent: "None",
-    entities: {time: "8 AM"},
-  },  
-  "9 AM": {
-    intent: "None",
-    entities: {time: "9 AM"},
-  },  
-  "10 AM": {
-    intent: "None",
-    entities: {time: "10 AM"},
-  },  
+
+  
   "11 AM": {
-    intent: "None",
+    intent: "11",
     entities: {time: "11 AM"},
   },    
   "12 PM": {
-    intent: "None",
+    intent: "12",
     entities: {time: "12 PM"},
   },  
-  "1 PM": {
-    intent: "None",
-    entities: {time: "1 PM"},
+  "1": {
+    intent: "1",
+    entities: {time: "1"},
+  },
+  "2": {
+    intent: "2",
+    entities: {time: "2"},
   },  
-  "2 PM": {
-    intent: "None",
-    entities: {time: "2 PM"},
+  "3": {
+    intent: "3",
+    entities: {time: "3"},
   },  
-  "3 PM": {
-    intent: "None",
-    entities: {time: "3 PM"},
+  "4": {
+    intent: "4",
+    entities: {time: "4"},
   },  
-  "4 PM": {
-    intent: "None",
-    entities: {time: "4 PM"},
-  },  
-  "5 PM": {
-    intent: "None",
-    entities: {time: "5 PM"},
+  "5": {
+    intent: "5",
+    entities: {time: "5"},
   }, 
-  "6 PM": {
-    intent: "None",
-    entities: {time: "6 PM"},
+  "6": {
+    intent: "6",
+    entities: {time: "6"},
   },  
-  "7 PM": {
-    intent: "None",
-    entities: {time: "7 PM"},
+  "7": {
+    intent: "7",
+    entities: {time: "7"},
   },  
-  "8 PM": {
-    intent: "None",
-    entities: {time: "8 PM"},
+  "8": {
+    intent: "8",
+    entities: {time: "8"},
   },  
-  "9 PM": {
-    intent: "None",
-    entities: {time: "9 PM"},
+  "9": {
+    intent: "9",
+    entities: {time: "9"},
   },  
-  "10:00 PM": {
-    intent: "None",
-    entities: {time: "10:00 PM"},
+  "10": {
+    intent: "10",
+    entities: {time: "10"},
   }, 
     
   "one hour later": {
-    intent: "None",
+    intent: "one hour later",
     entities: {time: "one hour later"},
   },  
   "two hours later": {
-    intent: "None",
+    intent: "two hours later",
     entities: {time: "two hours later"},
   },
   "three hours later": {
-    intent: "None",
+    intent: "three hours later",
     entities: {time: "three hours later"},
   },
   "in the morning": {
-    intent: "None",
+    intent: "morning",
     entities: {time: "morning"},
   },
   "in the afternoon": {
-    intent: "None",
+    intent: "afternoon",
     entities: {time: "afternoon"},
   },
   "in the evening": {
-    intent: "None",
+    intent: "evening",
     entities: {time: "evening"},
   },
   "March 1, 2022": {
@@ -191,31 +173,31 @@ const grammar: Grammar = {
     entities: {date: "March 1, 2022"
     },
   },
-  "on Friday": {
+  Friday: {
     intent: "Friday",
     entities: {date: "Friday"},
   },  
-  "on Saturday": {
+  Saturday: {
     intent: "Saturday",
     entities: {date: "Saturday"},
   },
-  "on Sunday": {
+  Sunday: {
     intent: "Sunday",
     entities: {date: "Sunday"},
   },
-  "on Monday": {
+  Monday: {
     intent: "Monday",
     entities: {date: "Monday"},
   },
-  "on Tuesday": {
+  Tuesday: {
     intent: "Tuesday",
     entities: {date: "Tuesday"},
   },  
-  "on Wednesday": {
+  Wednesday: {
     intent: "Wednesday",
     entities: {date: "Wednesday"},
   },
-  "on Thursday": {
+  Thursday: {
     intent: "Thursday",
     entities: {date: "Thursday"},
   },
@@ -229,7 +211,7 @@ const grammar: Grammar = {
   },
   "create a meeting": {
     intent: "None",
-    entities: { answer: "create a meeting" },
+    entities: { meetinganswer: "create a meeting" },
   },
   "ask a question about someone": {
     intent: "ask a 'who is' question",
@@ -278,9 +260,9 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         RECOGNISED: [
           {
             target: "Meeting",
-            cond: (context) =>  !!getEntity(context,"answer"),
+            cond: (context) =>  !!getEntity(context,"meetinganswer"),
             actions: assign({
-              answer:(context) => getEntity(context,"answer"),
+              answer:(context) => getEntity(context,"meetinganswer"),
             }), 
           },
           {
@@ -602,7 +584,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         },
         notmatch: {
           entry: say(
-            "Sorry, I don't understand. Do you want me to create a meeting titled ${context.title}, on ${context.date} for the whole day?"
+            "Sorry, I do not understand. Do you want me to create a meeting for the whole day?"
           ),
           on: { ENDSPEECH: "ask" },
         },
