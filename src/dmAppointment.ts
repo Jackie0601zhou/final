@@ -16,49 +16,50 @@ interface Grammar {
   };
 }
 
+/*
 const grammar: Grammar = {
   lecture: {
-    intent: "Dialogue systems lecture",
+    intent: "None",
     entities: { title: "Dialogue systems lecture" },
   },
   lunch: {
-    intent: "Lunch at the canteen",
+    intent: "None",
     entities: { title: "Lunch at the canteen" },
   },
   dinner: {
-    intent: "Dinner at the home",
+    intent: "None",
     entities: { title: "Dinner at the home" },
   },
   coffee: {
-    intent: "Take a coffee",
+    intent: "None",
     entities: { title: "Take a coffee" }
   },
   breakfast: {
-    intent: "Take breakfast",
+    intent: "None",
     entities: { title: "Take breakfast" }
   },
   supermarket: {
-    intent: "Go to supermarket",
+    intent: "None",
     entities: { title: "Go to supermarket" }
   },
   friends: {
-    intent: "Meet friends",
+    intent: "None",
     entities: { title: "Meet friends" }
   },
   cats: {
-    intent: "feed cats",
+    intent: "None",
     entities: { title: "feed cats" }
   },
   exam: {
-    intent: "exam",
+    intent: "None",
     entities: { title: "exam"},
   },
   trip: {
-    intent: "trip",
+    intent: "None",
     entities: { title: "trip"},
   },
   "Weekly Meeting": {
-    intent: "Weekly Meeting",
+    intent: "Nne",
     entities: {title: "Weekly Meeting"},
   },
   yes: {
@@ -96,294 +97,314 @@ const grammar: Grammar = {
 
   
   "11 AM": {
-    intent: "11",
-    entities: {time: "11 AM"},
+    intent: "None",
+    entities: {time: "11:00"},
   },    
   "12 PM": {
-    intent: "12",
-    entities: {time: "12 PM"},
+    intent: "None",
+    entities: {time: "12:00"},
   },  
-  "1": {
-    intent: "1",
-    entities: {time: "1"},
+  "1 PM": {
+    intent: "None",
+    entities: {time: "13:00"},
   },
-  "2": {
-    intent: "2",
-    entities: {time: "2"},
+  "2 PM": {
+    intent: "None",
+    entities: {time: "14:00"},
   },  
-  "3": {
-    intent: "3",
-    entities: {time: "3"},
+  "3 PM": {
+    intent: "None",
+    entities: {time: "15:00"},
   },  
-  "4": {
+  "4 PM": {
     intent: "4",
-    entities: {time: "4"},
+    entities: {time: "16:00"},
   },  
-  "5": {
+  "5 PM": {
     intent: "5",
-    entities: {time: "5"},
+    entities: {time: "17:00"},
   }, 
-  "6": {
+  "6 PM": {
     intent: "6",
-    entities: {time: "6"},
+    entities: {time: "18:00"},
   },  
-  "7": {
+  "7 PM": {
     intent: "7",
-    entities: {time: "7"},
+    entities: {time: "19:00"},
   },  
-  "8": {
+  "8 PM": {
     intent: "8",
-    entities: {time: "8"},
+    entities: {time: "20:00"},
   },  
-  "9": {
+  "9 PM": {
     intent: "9",
-    entities: {time: "9"},
+    entities: {time: "21:00"},
   },  
-  "10": {
+  "10 PM": {
     intent: "10",
-    entities: {time: "10"},
+    entities: {time: "22:00"},
   }, 
-    
+  "6 AM": {
+    intent: "6",
+    entities: {time: "6:00"},
+  },  
+  "7 AM": {
+    intent: "7",
+    entities: {time: "7:00"},
+  },  
+  "8 AM": {
+    intent: "8",
+    entities: {time: "8:00"},
+  },  
+  "9 AM": {
+    intent: "9",
+    entities: {time: "9:00"},
+  },  
+  "10 AM": {
+    intent: "10",
+    entities: {time: "10:00"},
+  }, 
   "one hour later": {
-    intent: "one hour later",
+    intent: "None",
     entities: {time: "one hour later"},
   },  
   "two hours later": {
-    intent: "two hours later",
+    intent: "None",
     entities: {time: "two hours later"},
   },
   "three hours later": {
-    intent: "three hours later",
+    intent: "None",
     entities: {time: "three hours later"},
   },
   "in the morning": {
-    intent: "morning",
+    intent: "None",
     entities: {time: "morning"},
   },
   "in the afternoon": {
-    intent: "afternoon",
+    intent: "None",
     entities: {time: "afternoon"},
   },
   "in the evening": {
-    intent: "evening",
+    intent: "None",
     entities: {time: "evening"},
   },
-  "March 1, 2022": {
-    intent: "March 1, 2022",
-    entities: {date: "March 1, 2022"
-    },
-  },
   friday: {
-    intent: "Friday",
+    intent: "None",
     entities: {date: "Friday"},
   },  
   saturday: {
-    intent: "Saturday",
+    intent: "None",
     entities: {date: "Saturday"},
   },
   sunday: {
-    intent: "Sunday",
+    intent: "None",
     entities: {date: "Sunday"},
   },
   monday: {
-    intent: "Monday",
+    intent: "None",
     entities: {date: "Monday"},
   },
   tuesday: {
-    intent: "Tuesday",
+    intent: "None",
     entities: {date: "Tuesday"},
   },  
   wednesday: {
-    intent: "Wednesday",
+    intent: "None",
     entities: {date: "Wednesday"},
   },
   thursday: {
-    intent: "Thursday",
+    intent: "None",
     entities: {date: "Thursday"},
   },
   today: {
-    intent: "today",
+    intent: "None",
     entities: {date: "today"},
   },  
   tomorrow: {
-    intent: "tomorrow",
+    intent: "None",
     entities: {date: "tomorrow"},
   },
   "create a meeting": {
     intent: "None",
     entities: { meetinganswer: "create a meeting" },
+  },  
+  "schedule a meeting": {
+    intent: "None",
+    entities: { meetinganswer: "create a meeting" },
   },
   "ask a question about someone": {
-    intent: "ask a 'who is' question",
+    intent: "None",
     entities: { answerperson: "ask a 'who is' question" },
   },
   "ask about someone": {
-    intent: "ask a 'who is' question",
+    intent: "None",
     entities: { answerperson: "ask a 'who is' question" },
   },
   "ask a question": {
-    intent: "ask a 'who is' question",
+    intent: "None",
     entities: { answerperson: "ask a 'who is' question" },
   },
 };
+*/
 
 
 
 
-const getEntity = (context: SDSContext,entity: string) => {
-  // lowercase the utterance and remove tailing "."
-  let u = context.recResult[0].utterance.toLowerCase().replace(/.$/g, "");
-  if (u in grammar) {
-    return grammar[u].intent;
-  }
-  return false;
+const getIntent = (context: SDSContext) => {
+  let u = context.nluResult.prediction.topIntent.toLowerCase().replace(/\.$/g, "");
+  return u;
 };
-
 
 export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
   initial: "idle",
   states: {
     idle: {
       on: {
-        CLICK:"init",
+        CLICK: "init",
       },
     },
-    init:{
-      on:{
-        TTS_READY:"welcome",
-        CLICK:"welcome",
+    init: {
+      on: {
+        TTS_READY: "usersname", 
+        CLICK: "usersname", 
       },
     },
-    welcome:{
-      initial: "prompt",
-      on:{
-        RECOGNISED: [
-          {
-            target: "Meeting",
-            cond: (context) =>  !!getEntity(context,"meetinganswer"),
-            actions: assign({
-              meetinganswer:(context) => getEntity(context,"meetinganswer"),
-            }), 
-          },
-          {
-            target: "getPersonInfo",
-            cond: (context) =>  !!getEntity(context,"answerperson"),
-            actions: assign({
-              answerperson:(context) => getEntity(context,"answerperson"),
-            }), 
-          },
-          {
-            target:".notmatch"
-          },
-        ],
-        TIMEOUT:".prompt",
-      },
-      states:{
-        prompt:{
-          entry: say("Hello Jackie! Would you like to create a meeting or ask about someone?"),
-          on:{ENDSPEECH:"ask"},
-        },
-        ask:{
-          entry:send ("LISTEN"),
-        },
-        notmatch:{
-          entry:say("Sorry I don't understand. Would you like to create a meeting or ask about someone?"),
-          on:{ENDSPEECH:"ask"},
-        },
-      },
-    },
-    Meeting: {
-      entry: say("Ok!"),
-      on: { ENDSPEECH: "createmeeting" },
-      },
-    getPersonInfo: {
-      entry: send((context) => ({
-        type: "SPEAK",
-        value: `OK, ${context.answerperson}.`,
-      })),
-      on: { ENDSPEECH: "WhoIsX" }, // askQuestion ==> What would you like to ask?
-      },
-    WhoIsX: {
+    usersname: {
       initial: "prompt",
       on: {
         RECOGNISED: [
-          { target: ".info",
-            actions: assign({whois:  
-              context => {return context.recResult[0].utterance}
-            })
-              
-            },
           {
-            target: ".notmatch",
+            target: "welcome",
+            cond: (context) => {
+              const { nluResult } = context;
+              return (
+                nluResult &&
+                nluResult.prediction &&
+                nluResult.prediction.entities &&
+                nluResult.prediction.entities.length > 0 &&
+                nluResult.prediction.entities[0].category === 'username'
+              );
+            },            
+            actions: assign({
+              username: (context) => context.nluResult.prediction.entities[0].text.replace(/\.$/g, "")   
+            }),
+          },
+          {
+            target: ".notmatch"
           },
         ],
         TIMEOUT: ".prompt",
       },
       states: {
-        info: {
-          invoke: {
-            id: 'getInfo',
-            src: (context, event) => kbRequest(context.whois),
-            onDone: [{
-              target: 'success',
-              cond: (context, event) => event.data.Abstract !== "",
-              actions: assign({ info: (context, event) => event.data })
-            },
-            {
-              target: 'failure',
-            },
-          ],
-            onError: {
-              target: 'failure',
-            }
-          }
-        },
-        success: {
-          entry: send((context) => ({
-            type: "SPEAK",
-            value: `Here is some information about ${context.whois} ${context.info.Abstract}`
-          })),
-          on: {ENDSPEECH: "meetX"}
-        },
-        failure: {
-          entry: send((context) => ({
-            type: "SPEAK",
-            value: `Sorry, I can't find any information about ${context.whois}. Anyone else you want to know?`
-          })),   
-          on: { ENDSPEECH: "ask" },
-        },
         prompt: {
-          entry: say("Whom would you want to know about?"),
+          entry: say("Hello! Can you tell me your name or how you'd like me to address you?"),
           on: { ENDSPEECH: "ask" },
         },
         ask: {
           entry: send("LISTEN"),
         },
         notmatch: {
-          entry: say(
-            "Sorry, could you please repeat aganin?"
-          ),
+          entry: say("Sorry, could you repeat again?"),
           on: { ENDSPEECH: "ask" },
-        },
+        }
       },
     },
+    welcome: { 
+      initial: "prompt",
+        on: {
+          RECOGNISED: [
+            {target: "Meeting",
+              cond: (context) => getIntent(context) === "create a meeting",
+              actions: assign({
+                meetinganswer: (context) => {return context.nluResult.query} 
+              }),
+            },
+            {target: ".getInfo",
+              cond: (context) => getIntent(context) === "who is x",   
+              actions: assign({answerperson:  
+                (context) => {return context.nluResult.prediction.entities[0].text.replace("é","e").replace(/\.$/g, "")}
+              }),          
+              },
+            {
+              target: ".notmatch",
+            },
+          ],
+          TIMEOUT: ".prompt",
+        },
+        states: {
+          getInfo: {
+            invoke: {
+              id: 'getInfo',
+              src: (context, event) => kbRequest(context.whois),
+              onDone: [{
+                target: 'success',
+                cond: (context, event) => event.data.Abstract !== "",
+                actions: assign({ info: (context, event) => event.data })
+              },
+              {
+                target: 'fail',
+              },
+            ],
+              onError: {
+                target: 'fail',
+              }
+            }
+          },
+          success: {
+            entry: send((context) => ({
+              type: "SPEAK",
+              value: `This is what I found on the web about ${context.whois}. ${context.info.Abstract}`
+            })),
+            on: {ENDSPEECH: "#meetX"}
+          },
+          fail: {
+            entry: send((context) => ({
+              type: "SPEAK",
+              value: `Sorry, I cannot find anything about ${context.whois}.`
+            })),
+            on: {ENDSPEECH: "prompt"}
+          },
+          prompt: {
+            entry: send((context) => ({
+              type: "SPEAK",
+              value: `Hi ${context.username}! Would you like to create a meeting or ask a question?`,
+            })),
+            on: { ENDSPEECH: "ask" },
+          },
+          ask: {
+            entry: send("LISTEN"),
+          },
+          notmatch: {
+            entry: say(
+              "Sorry, I don't understand. Would you like to create a meeting or ask a question?"
+            ),
+            on: { ENDSPEECH: "ask" },
+          },
+          getIntent: {
+          }
+        },
+      },
+    Meeting: {
+      entry: say("Ok!"),
+      on: { ENDSPEECH: "createmeeting" },
+      },
     meetX: {
       id:"meetX",
       initial: "prompt",
       on: {
         RECOGNISED: [
           {
-            target: "refusemeeting",
-            cond: (context) => !!getEntity(context, "reject"),
+            target: "acceptmeeting",
+            cond: (context) => getIntent(context) === "confirm",
             actions: assign({
-              reject: (context) => getEntity(context, "reject"),
+              confirm: (context) => context.nluResult.query,
             }), 
           },
           {
-            target: "acceptmeeting",
-            cond: (context) => !!getEntity(context, "confirm"),
+            target: "refusemeeting",
+            cond: (context) => getIntent(context) === "reject",
             actions: assign({
-              confirm: (context) => getEntity(context, "confirm"),
+              reject: (context) => context.nluResult.query,
             }), 
           },
           {
@@ -415,7 +436,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
     acceptmeeting: {
       entry: [
         say("OK! Let's schedule a meeting!"),
-        assign((context) => ({title: `meeting with ${context.whois}`}))
+        assign((context) => ({title: `meeting with ${context.whois.replace(/\.$/g, "")}`}))
       ],
       on: { ENDSPEECH: "askDate" },
       },
@@ -425,9 +446,9 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         RECOGNISED: [
           {
             target: "info",
-            cond: (context ) => !!getEntity(context, "title"),
+            cond: (context ) => getIntent(context) === "create a meeting" ,
             actions: assign({
-              title: (context) => getEntity(context, "title"),
+              title: (context) => context.nluResult.prediction.entities[0].text.replace(/\.$/g, ""),
             }),
           },
           {
@@ -465,9 +486,9 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         RECOGNISED: [
           {
             target: "day",
-            cond: (context) => !!getEntity(context, "date"),
+            cond: (context) => getIntent(context) ===  "date",
             actions: assign({
-              date: (context) => getEntity(context, "date"),
+              date: (context) => context.nluResult.prediction.entities[0].text.replace(/\.$/g, ""),
             }), 
           },
           {
@@ -495,7 +516,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
     day: {
       entry: send((context) => ({
         type: "SPEAK",
-        value: `OK, meeting scheduled for ${context.date}`,
+        value: `OK, the meeting has been scheduled on ${context.date}`,
       })),
       on: { ENDSPEECH: "isWholeDay" },
     },
@@ -505,16 +526,16 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         RECOGNISED: [
           {
             target: "negative",
-            cond: (context) => !!getEntity(context, "reject"),
+            cond: (context) => getIntent(context) === "reject",
             actions: assign({
-              reject: (context) => getEntity(context, "reject"),
+              reject: (context) => context.nluResult.query,
             }), 
           },
           {
             target: "positive",
-            cond: (context) => !!getEntity(context, "confirm"),
+            cond: (context) => getIntent(context) === "confirm",
             actions: assign({
-              confirm: (context) => getEntity(context, "confirm"),
+              confirm: (context) => context.nluResult.query,
             }), 
           },
           {
@@ -540,63 +561,12 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
       },
     },
     negative: {
-      entry: say("Not for the whole day."),
+      entry: say("The meeting will not last for the whole day."),
       on: { ENDSPEECH: "Time" },
     },
     positive: {
-      entry: say("For the whole day."),
-      on: { ENDSPEECH: "confirmwholeday" },
-    },
-    confirmwholeday: {
-      initial: "prompt",
-      on: {
-        RECOGNISED: [
-          {
-            target: "wholeDayPositive",
-            cond: (context) => !!getEntity(context, "confirm"),
-            actions: assign({
-              confirm: (context) => getEntity(context, "confirm"),
-            }), 
-          },
-          {
-            target: "wholeDayNegative",
-            cond: (context) => !!getEntity(context, "reject"),
-            actions: assign({
-              reject: (context) => getEntity(context, "reject"),
-            }), 
-          },
-          {
-            target: ".notmatch",
-          },
-        ],
-        TIMEOUT: ".prompt",
-      },
-      states: {
-        prompt: {
-          entry: send((context) => ({
-            type: "SPEAK",
-            value: `Do you want me to create a meeting titled ${context.title}, on ${context.date} for the whole day?`,
-          })),
-          on: { ENDSPEECH: "ask" },
-        },
-        ask: {
-          entry: send("LISTEN"),
-        },
-        notmatch: {
-          entry: say(
-            "Sorry, I do not understand. Do you want me to create a meeting for the whole day?"
-          ),
-          on: { ENDSPEECH: "ask" },
-        },
-      },
-    },
-    wholeDayPositive: {
-      entry: say("Great!"),
+      entry: say("The meeting will last for the whole day."),
       on: { ENDSPEECH: "meetingcreated" },
-    },
-    wholeDayNegative: {
-      entry: say("Very well! Starting over!"),
-      on: { ENDSPEECH: "welcome" },
     },
     Time: {
       initial: "prompt",
@@ -604,9 +574,9 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         RECOGNISED: [
           {
             target: "time",
-            cond: (context) => !!getEntity(context, "time"),
+            cond: (context) => getIntent(context) === "time",
             actions: assign({
-              time: (context) => getEntity(context, "time"),
+              time: (context) => context.nluResult.prediction.entities[0].text.replace(/\.$/g, ""),
             }), 
           },
           {
@@ -634,7 +604,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
     time: {
       entry: send((context) => ({
         type: "SPEAK",
-        value: `OK, time is set for ${context.time}`,
+        value: `OK, time of the meeting is ${context.time}`,
       })),
       on: { ENDSPEECH: "meetConfirm" },
     },
@@ -644,17 +614,17 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         RECOGNISED: [
           {
             target: "meetingcreated",
-            cond: (context) => !!getEntity(context, "confirm"),
+            cond: (context) => getIntent(context) === "confirm",
             actions: assign({
-              confirm: (context) => getEntity(context, "confirm"),
+              confirm: (context) => context.nluResult.query,
             }), 
           },
           {
-            target: "rethink",
-            cond: (context) => !!getEntity(context, "reject"),
+            target: "meetingrescheduled",
+            cond: (context) => getIntent(context) === "reject",
             actions: assign({
-              reject: (context) => getEntity(context, "reject"),
-            }), 
+              reject: (context) => context.nluResult.query,
+          }),  
           },
           {
             target: ".notmatch",
@@ -682,10 +652,10 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
       },
     },
     meetingcreated: {
-      entry: say('OK! You have a meeting titled ${context.title}, on ${context.date} at ${context.time}.'),
+      entry: say('OK! Your meeting has been created successfully'),
       on: { ENDSPEECH: "init" },
     },
-    rethink: {
+    meetingrescheduled: {
       entry: say("ok!, starting over!"),
       on: { ENDSPEECH: "welcome" },
     },
@@ -703,4 +673,3 @@ const kbRequest = (text: string) =>
             
             
             
-      
