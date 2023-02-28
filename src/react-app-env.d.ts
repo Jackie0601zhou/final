@@ -49,6 +49,10 @@ interface SDSContext {
   meetinganswer:any;
   answerperson:any;
   info:any;
+  nluResult: any;
+  username:any;
+  entities:any;
+  topIntent:any;
 }
 
 type SDSEvent =
