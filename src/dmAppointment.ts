@@ -228,20 +228,16 @@ const grammar: Grammar = {
 };
 
 
-
-
-const getEntity = (context: SDSContext, category: string) => {
-  const result = [];
-  const entities = context.nluResult.prediction.entities
-  for (let i = 0; i < entities.length; i++) {
-    if (entities[i].category === category) {
-      result.push(entities[i].text);
-      return result
+const getEntity = (context: SDSContext, entity: string) => {
+  // lowercase the utterance and remove tailing "."
+  let u = context.recResult[0].utterance.toLowerCase().replace(/\.$/g, "");
+  if (u in grammar) {
+    if (entity in grammar[u].entities) {
+      return grammar[u].entities[entity];
     }
   }
   return false;
 };
-
 
 export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
   initial: "idle",
@@ -346,7 +342,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
             type: "SPEAK",
             value: `Here is some information about ${context.whois} ${context.info.Abstract}`
           })),
-          on: {ENDSPEECH: "meetX"}
+          on: {ENDSPEECH: "#meetX"}
         },
         failure: {
           entry: send((context) => ({
@@ -685,7 +681,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
       },
     },
     meetingcreated: {
-      entry: say('OK! You have a meeting titled ${context.title}, on ${context.date} at ${context.time}.'),
+      entry: say('OK! Your meeting has been created!'),
       on: { ENDSPEECH: "init" },
     },
     rethink: {
