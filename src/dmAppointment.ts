@@ -230,11 +230,14 @@ const grammar: Grammar = {
 
 
 
-const getEntity = (context: SDSContext,entity: string) => {
-  // lowercase the utterance and remove tailing "."
-  let u = context.recResult[0].utterance.toLowerCase().replace(/.$/g, "");
-  if (u in grammar) {
-    return grammar[u].intent;
+const getEntity = (context: SDSContext, category: string) => {
+  const result = [];
+  const entities = context.nluResult.prediction.entities
+  for (let i = 0; i < entities.length; i++) {
+    if (entities[i].category === category) {
+      result.push(entities[i].text);
+      return result
+    }
   }
   return false;
 };
