@@ -1,1 +1,31 @@
 
+<?xml version="1.0" encoding="utf-8"?>
+<lexicon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2005/01/pronunciation-lexicon http://www.w3.org/TR/2007/CR-pronunciation-lexicon-20071212/pls.xsd" version="1.0" alphabet="ipa" xml:lang="en-US" xmlns="http://www.w3.org/2005/01/pronunciation-lexicon">
+  <lexeme>
+    <grapheme>Alex</grapheme>
+    <phoneme>ˈæləks</phoneme>
+  </lexeme>
+  <lexeme>
+    <grapheme>SMS</grapheme>
+    <phoneme>ɛs-ɛm-ɛs</phoneme>
+  </lexeme>
+  <lexeme>
+    <grapheme>Spiderman</grapheme>
+    <phoneme>ˈspaɪdərmæn</phoneme>
+  </lexeme>
+  <lexeme>
+    <grapheme>Zhang Liao</grapheme>
+    <phoneme>ʈʂɑʊ ljɑŋ</phoneme>
+  </lexeme>
+  <lexeme>
+    <grapheme>Puppy</grapheme>
+    <phoneme>ˈpʌpi</phoneme>
+  </lexeme>
+    <lexeme>
+    <grapheme>Kanye West</grapheme>
+    <phoneme>ˈkɑːnjeɪ wɛst</phoneme>
+  </lexeme>
+    <lexeme>
+    <grapheme>Mozart</grapheme>
+    <phoneme>ˈmoʊzɑrt</phoneme>
+  </lexeme>
