@@ -53,6 +53,9 @@ interface SDSContext {
   username:any;
   entities:any;
   topIntent:any;
+  reprompts: number;
+  help:any;
+  counter:number;
 }
 
 type SDSEvent =
@@ -61,9 +64,13 @@ type SDSEvent =
   | { type: "CLICK" }
   | { type: "SELECT"; value: any }
   | { type: "STARTSPEECH" }
-  | { type: "RECOGNISED" }
+  | { type: "RECOGNISED" ; value: string }
   | { type: "ASRRESULT"; value: Hypothesis[] }
   | { type: "ENDSPEECH" }
   | { type: "LISTEN" }
   | { type: "TIMEOUT" }
-  | { type: "SPEAK"; value: string };
+  | { type: "ERROR" }
+  | { type: "SPEAK"; value: string }
+  | { type: "HELP" }
+  | { type: "NOINPUT" }
+
