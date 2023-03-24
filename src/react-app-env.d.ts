@@ -3,6 +3,7 @@
 declare module "react-speech-kit";
 declare module "web-speech-cognitive-services/lib/SpeechServices/TextToSpeech";
 declare module "web-speech-cognitive-services/lib/SpeechServices/SpeechToText";
+declare module 'fuzzyset.js';
 
 
 
@@ -30,32 +31,39 @@ interface Settings {
 }
 
 interface SDSContext {
+  listeningPaused:boolean;
+  listeningResumed:boolean;
   parameters: Parameters;
   asr: SpeechRecognition;
   tts: SpeechSynthesis;
   voice: SpeechSynthesisVoice;
   ttsUtterance: MySpeechSynthesisUtterance;
-  recResult: Hypothesis[];
+  recResult: any
   ttsAgenda: string;
   azureAuthorizationToken: string;
   audioCtx: any;
-  title: any;
-  time: any;
-  date:any;
-  topic:string;
-  confirm:any;
-  reject:any;
-  whois:any;
-  meetinganswer:any;
-  answerperson:any;
-  info:any;
+  Summoner_mode: any;
+  Howling_mode: any;
+  mode:string;
+  flashCooldown:number;
+  champions:any;
+  Summoner_mode:any;
+  Howling_mode:any;
   nluResult: any;
-  username:any;
   entities:any;
   topIntent:any;
-  reprompts: number;
-  help:any;
-  counter:number;
+  champion:any;
+  championCooldowns: { [champion: string]: number };
+  announceFlashCooldown:any;
+  timerIds:any;
+  countdown:number;
+  timer:any;
+  announceMessage:any;
+  reminderDelay:any;
+  currentChampion:any;
+  proposedChampionName:any;
+  selectedChampionName?: string;
+  message:any;
 }
 
 type SDSEvent =
@@ -64,13 +72,15 @@ type SDSEvent =
   | { type: "CLICK" }
   | { type: "SELECT"; value: any }
   | { type: "STARTSPEECH" }
-  | { type: "RECOGNISED" ; value: string }
+  | { type: "RECOGNISED" }
   | { type: "ASRRESULT"; value: Hypothesis[] }
   | { type: "ENDSPEECH" }
   | { type: "LISTEN" }
   | { type: "TIMEOUT" }
-  | { type: "ERROR" }
+  | { type: 'CHAMPION_FLASHED' }
+  | { type: 'CHECK_COOLDOWN' }
+  | { type: 'UNRECOGNIZED_FLASH' }
+  | { type: 'SET_TIMER' }
   | { type: "SPEAK"; value: string }
-  | { type: "HELP" }
-  | { type: "NOINPUT" }
-
+  | { type: "PAUSE" }
+  | { type: "RESUME" };
